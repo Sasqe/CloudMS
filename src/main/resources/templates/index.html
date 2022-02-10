@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				layout:decorate="layouts/preLoginTemplate">
+	<head>
+		<meta charset="UTF-8">
+		<title>CST-323 Cloud Computing</title>
+	</head>
+	
+	<body>
+	<!--This replaces the body from the preLogin Layout-->
+		<div layout:fragment="content">
+			<!--This is replaced by the message sent by the home controller-->
+			<h2 th:text="${welcomeMessage}">This is my default text</h2><br/>
+			<h3>Disclaimer:</h3>
+			<p style="width: 50%;">
+				Cloud Computing Platforms Testing
+			</p>
+	</body>
+
+</html>

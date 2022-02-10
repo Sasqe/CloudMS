@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"com.gcu.model","l":"CredentialsModel"},{"p":"com.gcu.model","l":"LoginModel"},{"p":"com.gcu.model","l":"ProductModel"},{"p":"com.gcu.model","l":"UserModel"}];updateSearchResults();

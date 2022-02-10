@@ -1,0 +1,59 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/preLoginTemplate">
+<head>
+  <meta name="description" content="Webpage description goes here" />
+  <meta charset="utf-8">
+  <title>register</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+  
+<div layout:fragment="content">
+<form action="#" th:action="@{doRegister}" th:object="${userModel}" method="post">
+	<table>
+		<tr>
+			<!--First name attribute of the user model with error checking-->
+			<td>First Name:</td><td><input type="text" th:field="*{firstname}"></td><td><h5 style="color:red" th:if"{#fields.hasErrors('firstname')}" th:errors="*{firstname}">First Name Error</h5></td>
+		</tr>
+		<tr>
+			<!--Last name attribute of the user model with error checking-->
+			<td>Last Name:</td><td><input type="text" th:field="*{lastname}"></td><td><h5 style="color:red" th:if"{#fields.hasErrors('lastname')}" th:errors="*{lastname}">Last Name Error</h5></td>
+		</tr>
+		<tr>
+			<!--Username attribute of the user model with error checking-->
+			<td>Username:</td><td><input type="text" th:field="*{credentials.username}"></td><td><h5 style="color:red" th:if"{#fields.hasErrors('credentials.username')}" th:errors="*{credentials.username}">User Name Error</h5></td>
+		</tr>
+		<tr>
+			<!--Password attribute of the user model with error checking-->
+			<td>Password:</td><td><input type="password" th:field="*{credentials.password}"></td><td><h5 style="color:red" th:if"{#fields.hasErrors('credentials.password')}" th:errors="*{credentials.password}">Password Error</h5></td>
+		</tr>
+		<tr>
+			<!--Email attribute of the user model with error checking-->
+			<td>Email:</td><td><input type="text" th:field="*{email}"></td><td><h5 style="color:red" th:if"{#fields.hasErrors('email')}" th:errors="*{email}">Email Error</h5></td>
+		</tr>
+		<tr>
+			<!--Phone Number attribute of the user model with error checking-->
+			<td>Phone Number:</td><td><input type="text" th:field="*{number}"></td><td><h5 style="color:red" th:if"{#fields.hasErrors('number')}" th:errors="*{number}">Phone Number Error</h5></td>
+		</tr>
+		<tr>
+			<td colspan="3"><input class="edit edit-edit" type="submit" value="Register" /></td>
+		</tr>
+	</table>
+	
+	<!--This is where all errors from the above form are displayed-->
+	<div th:if="${#fields.hasErrors('*')}">List of Errors</div>
+	<div th:each="err : ${#fields.errors('*')}">
+		<span style="color:red" th:text="${err}" class="fieldError"></span>
+	</div>
+	
+</form>
+
+</div>
+
+<script>
+</script>
+
+</body>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<title th:text="${title}">CST-323 Cloud Computing</title>
+</head>
+<body>
+	<div th:fragment="header">
+<!--		<img th:src="@{/images/LBanner.jpg}" style="position: fixed; top: 0%; left: 0%; width:17%; height:100vh"/>
+		<img th:src="@{/images/RBanner.jpg}" style="position: fixed; top: 0%; right: 0%; width:17%; height:100vh"/>-->
+		<div align="center">
+	
+		</div>
+		<div class="bs-example">
+			<nav class="navbar navbar-expand-lg navbar-dark navbar bg-dark">
+  <div class="container-fluid">
+     <a class="navbar-brand" href="#">Cloud Computing</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li> 
+      </ul>
+      <form class="d-flex">
+        <button class="btn btn-outline-success"><a style="color: inherit; text-decoration: none;" href="/login/">Sign In</a></button>
+      </form>
+      &nbsp &nbsp
+       <form class="d-flex">
+        <button class="btn btn-outline-success"><a style="color: inherit; text-decoration: none; display:inline-block; " href="/register/">Register</a></button>
+      </form>
+    </div>
+  </div>
+</nav>
+		</div>
+	</div>
+	<!--Common Footer Fragment-->
+	<div th:fragment="footer">
+		<h5 style="color: black; text-align:center; position:fixed; bottom:0; width: 65%;">Copyright 2021 Grand Canyon University</h5>
+	</div>
+</body>
+</html>

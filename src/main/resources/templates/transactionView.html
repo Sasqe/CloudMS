@@ -1,0 +1,38 @@
+<!-- This is currently a filler page until we implement the pages 
+that come after logging in just to ensure our login functions are working-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/postLoginTemplate">
+<head>
+  <meta name="description" content="Webpage description goes here" />
+  <meta charset="utf-8">
+  <title>Update Product</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+  
+<div layout:fragment="content">
+	<form action="#" th:action="@{doTransaction}" method="post">
+	<table>
+		<tr>
+			<!--Product name attribute of the product model with error checking-->
+			<input type='hidden' name='id' th:value="${friend.credentials.username}"></td>
+		</tr>
+		<tr>
+			<!--Product name attribute of the product model with error checking-->
+			<td>Amount: </td><td><input type="number" step="0.01" th:name="amount" value="1.00"></td><td></td>
+		</tr>
+		<tr>
+			<td colspan="3"><input class="button center" type="submit" value="Submit" /></td>
+		</tr>
+	</table>
+	
+	
+</form>
+</div>
+
+</body>

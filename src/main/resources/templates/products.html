@@ -1,0 +1,56 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/postLoginTemplate">
+<head>
+  <meta name="description" content="Webpage description goes here" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Mukta:wght@300;400;600;700;800&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+  <style>
+ body {
+	 font-family: Mukta, sans-serif;
+	 height: 100vh;
+	 display: grid;
+	 justify-content: center;
+	 align-items: center;
+	 color: #4f546c;
+	 font-size: 0.9rem;
+	 background-color: #f9fbff;
+}
+  </style>
+<body>
+<section>
+<div layout:fragment="content">
+<h1 th:text="${resultMessage}">:)</h1>
+<br/><br/>
+<table>
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Product Number</th>
+			<th scope="col">Price</th>
+			<th scope="col">Edit</th>
+			<th scope="col">Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:if="${products.empty}">
+			<td style="text-align:center" colspan="4"> No products Available </td>
+		</tr>
+		<tr th:each="product : ${products}">
+			<td><h5 th:text="${product.ProductId}">01</h5></td>
+			<td><h5 th:text="${product.ProductNumber}">001</h5></td>
+			<td><h5 class="amount" th:text="${product.displayPrice(product.ProductPrice)}">1</h5></td>
+			<td><form action="#" th:action="@{editView}" method="post" th:object="${ProductModel}"><input type='hidden' name='id' th:value="${product.ProductId}"><button class="edit edit-edit" name="load" type="submit" value='Edit'>Edit</form></td>
+			<td><form action="#" th:action="@{doDelete}" method="post" th:object="${ProductModel}"><input type='hidden' name='id' th:value="${product.ProductId}"><button class="edit edit-delete" name="delete" type="submit" value='Delete'>Delete</form></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<script>
+</script>
+</section>
+</body>

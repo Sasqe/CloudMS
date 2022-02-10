@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<title th:text="${title}">CST-323 Cloud Computing</title>
+<style>
+
+/* Main content */
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+</style>
+</head>
+<body>
+	<div th:fragment="header">
+<!--		<img th:src="@{/images/LBanner.jpg}" style="position: fixed; top: 0%; left: 0%; width:17%; height:100vh"/>
+		<img th:src="@{/images/RBanner.jpg}" style="position: fixed; top: 0%; right: 0%; width:17%; height:100vh"/>-->
+		<div align="center">
+	
+		</div>
+		<div class="bs-example">
+			<nav class="navbar navbar-expand-lg navbar-dark navbar bg-dark">
+  <div class="container-fluid">
+     <a class="navbar-brand" href="#">Cloud Computing</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+        <button class="dropbtn">
+            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+        </button>
+        </li>
+         <li class="nav-item">
+         <button class="dropbtn">
+          <a class="nav-link" href="/profile/">Profile</a>
+         </button>
+        </li>
+         <li class="nav-item">
+          <div class="dropdown">
+    <button data-bs-toggle="dropdown" class="dropbtn">
+      <i class="fa fa-caret-down"></i>
+       <a class="nav-link" href="#">Friends</a>
+    </button>
+    <div class="dropdown-content">
+    <tr th:if="${nofriends == 1}">
+			 <a href="#">
+      <h5>No Friends</h5></td>
+      </a>
+		</tr>
+		<div th:unless="${nofriends == 1}">
+    <tr th:each="friend : ${user.friends}">
+      <a th:href="@{/profile/viewProfile?id={id}(id=${friend.credentials.username})}">
+      <h5 th:text="${friend.credentials.username}">Username</h5></td>
+      <input type='hidden' name='id' th:value="${friend.credentials.username}">
+      </a>
+    </tr>
+		</div>
+    </div>
+  </div>
+        </li>
+      </ul>
+      <form class="d-flex" th:action=@{/profile/searchUsers} method="post" th:object="${UserModel}">
+      <input type="text" class="btn btn-outline-danger" style="margin-right:10px; text-decoration: none;" name='id' placeholder="Search Users...">
+      </form>
+      <form class="d-flex">
+        <button class="btn btn-outline-danger"><a style="color: inherit; text-decoration: none;" href="/login/">Sign Out</a></button>
+      </form>
+    </div>
+  </div>
+</nav>
+		</div>
+	</div>
+	<!--Common Footer Fragment-->
+	<div th:fragment="footer">
+		<h5 style="color: black; text-align:center; position:fixed; bottom:0; width: 65%;">Copyright 2021 Grand Canyon University</h5>
+	</div>
+</body>
+</html>
