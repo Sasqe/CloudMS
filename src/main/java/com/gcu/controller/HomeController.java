@@ -27,6 +27,7 @@ public class HomeController
 	 * @param model (page model)
 	 * @return the home page
 	 */
+	// im adding to this controller 
 	@GetMapping("/")
 	public String home(Model model)
 	{
