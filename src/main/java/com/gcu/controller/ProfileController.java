@@ -95,6 +95,26 @@ public class ProfileController
 	    service.removeFriend(friend, user.getId());
 	    return "profile";
 	}
+	@PostMapping("/addFriend")
+	public String addFriend(@RequestParam(name="id") String id, Model model) 
+	{
+		UserModel user = new UserModel();
+		UserModel friend = new UserModel();
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (!(authentication instanceof AnonymousAuthenticationToken)) {
+			System.out.println("USER BEING SET!!");
+			user = service.findByUsername(authentication.getName());
+		}
+		friend = service.findByUsername(id);
+		//editView method for landing on the edit page, requestparam ID for finding which user was clicked on
+		//Add attributes and set attribute 'productModel' as the object that was clicked on
+	    model.addAttribute("title", "Friend Deleted Successfully");
+	    model.addAttribute("user", user);
+	    model.addAttribute("friend", friend);
+	    //return updateProduct view
+	    service.addFriend(friend, user.getId());
+	    return "profile";
+	}
 	@PostMapping("/searchUsers")
 	public String searchUsers(@RequestParam(name="id") String id, Model model) 
 	{
