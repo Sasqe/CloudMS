@@ -140,8 +140,7 @@ public class ProfileController
 	    for (int i = 0; i < results.size(); i++) {
 	    	System.out.println("RESULT " + i);
 	    	System.out.println(results.get(i).getFirstname() + results.get(i).getLastname() + results.get(i).getCredentials().getUsername() + results.get(i).getEmail() + results.get(i).getNumber());
-	    }
-	    	
+	    }	
 	    return "profiles";
 	}
 
