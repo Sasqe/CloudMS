@@ -38,7 +38,7 @@
 			<td><input type="text" th:field="${user.lastname}" th:value="${user.lastname}" class="updateTable"></td>
 			<td><input type="text" th:field="${user.email}" th:value="${user.email}" class="updateTable"></td>
 			<td><input type="text" th:field="${user.number}" th:value="${user.number}" class="updateTable"></td>
-			<td><h5 th:text="${user.wallet.getBalance}">1</h5></td>
+			<td><h5 th:text="${user.wallet.getAmount}">1</h5></td>
 			<td style="text-align:center"><input class="tableBtn" type='submit' value='Edit'></td>
 		</form>
 		</tr>

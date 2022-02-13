@@ -12,7 +12,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Service;
 
-import com.gcu.controller.rainfall;
 import com.gcu.model.CredentialsModel;
 import com.gcu.model.UserModel;
 import com.gcu.model.Wallet;
@@ -52,16 +51,10 @@ public class UserDataService implements IDataAccess<UserModel>
 		{
 			//Execute SQL query and loop over result set
 			SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql);	
-			byte[] privatekey = null;
-			byte[] publickey = null;
 			while(srs.next())
 			{
 				Wallet wallet = new Wallet();
-				privatekey = (byte[]) srs.getObject("privatekey");
-				publickey = (byte[]) srs.getObject("publickey");
-				KeyPair keypair = rainfall.createKeyPair(privatekey, publickey);
-				wallet.setPrivateKey(keypair.getPrivate());
-				wallet.setPublicKey(keypair.getPublic());
+				wallet.setAmount(srs.getFloat("balance"));
 				users.add(new UserModel(srs.getInt("id"),
 										srs.getString("firstname"),
 										srs.getString("lastname"),
@@ -102,23 +95,10 @@ public class UserDataService implements IDataAccess<UserModel>
 				try {
 					//Execute SQL query and loop over result set
 					SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql);	
-					byte[] privatekey = null;
-					byte[] publickey = null;
-					int i = 0;
 					while(srs.next())
 					{
 						Wallet wallet = new Wallet();
-						privatekey = (byte[]) srs.getObject("privatekey");
-						publickey = (byte[]) srs.getObject("publickey");
-						if (privatekey != null && publickey != null) {
-						KeyPair keypair = rainfall.createKeyPair(privatekey, publickey);
-						wallet.setPrivateKey(keypair.getPrivate());
-						wallet.setPublicKey(keypair.getPublic());
-						}
-						else {
-							wallet.setPublicKey(null);
-							wallet.setPrivateKey(null);
-						}
+						wallet.setAmount(srs.getFloat("balance"));
 						user = new UserModel(srs.getInt("id"),
 												srs.getString("firstname"),
 												srs.getString("lastname"),
@@ -196,13 +176,10 @@ public class UserDataService implements IDataAccess<UserModel>
 	public boolean createWallet(Wallet wallet) 
 	{
 		String sql =
-				 "INSERT INTO wallets(user_id, privatekey, publickey, balance) VALUES((SELECT users.id FROM users ORDER BY `id` DESC LIMIT 1),?,?,?)";
-			try {
-					  byte[] publicb = wallet.getPublicKey().getEncoded(); 
-					  byte[] privateb = wallet.getPrivateKey().getEncoded(); 
-				  int rows = jdbcTemplateObject.update(sql, privateb,
-						  									publicb,
-						  									wallet.getBalance()
+				 "INSERT INTO wallets(user_id, balance) VALUES((SELECT users.id FROM users ORDER BY `id` DESC LIMIT 1), ?)";
+			try { 
+				  int rows = jdbcTemplateObject.update(sql, 
+						  									wallet.getAmount()
 						  									); 
 				  
 				  if (rows > 0) { System.out.println("A row has been inserted successfully.");	return true; }
@@ -294,7 +271,10 @@ public class UserDataService implements IDataAccess<UserModel>
 				  int rows = jdbcTemplateObject.update(sql, user.getId(), friend.getId()
 						  									); 
 				  
-				  if (rows > 0) { System.out.println("A row has been inserted successfully."); user = findByUsername(user.getCredentials().getUsername()); return user; }
+				  if (rows > 0) { System.out.println("A row has been inserted successfully."); 
+				  user = findByUsername(user.getCredentials().getUsername()); 
+				  return user; 
+				  }
 				  
 				}
 			catch (Exception ex) {
@@ -322,23 +302,10 @@ public class UserDataService implements IDataAccess<UserModel>
 		try {
 			//Execute SQL query and loop over result set
 			SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql);	
-			byte[] privatekey = null;
-			byte[] publickey = null;
-			int i = 0;
 			while(srs.next())
 			{
 				Wallet wallet = new Wallet();
-				privatekey = (byte[]) srs.getObject("privatekey");
-				publickey = (byte[]) srs.getObject("publickey");
-				if (privatekey != null && publickey != null) {
-				KeyPair keypair = rainfall.createKeyPair(privatekey, publickey);
-				wallet.setPrivateKey(keypair.getPrivate());
-				wallet.setPublicKey(keypair.getPublic());
-				}
-				else {
-					wallet.setPublicKey(null);
-					wallet.setPrivateKey(null);
-				}
+				wallet.setAmount(srs.getFloat("balance"));
 				user = new UserModel(srs.getInt("id"),
 										srs.getString("firstname"),
 										srs.getString("lastname"),

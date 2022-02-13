@@ -31,8 +31,7 @@ public class HomeController
 	 * @param model (page model)
 	 * @return the home page
 	 */
-	// im adding to this controller 
-	// hi
+	// the first page we see, displays intro information CONFIRMED
 	@GetMapping("/")
 	public String home(Model model)
 	{
@@ -46,6 +45,7 @@ public class HomeController
 	 * @param model (page model)
 	 * @return index page
 	 */
+	// the first page we see after logging in, does not work if you're not logged in CONFIRMED
 	@GetMapping("/home")
 	public String homePostLogin(Model model)
 	{

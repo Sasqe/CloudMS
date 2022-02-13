@@ -1,0 +1,49 @@
+<!-- This is currently a filler page until we implement the pages 
+that come after logging in just to ensure our login functions are working-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/postLoginTemplate">
+<head>
+  <meta name="description" content="Webpage description goes here" />
+  <meta charset="utf-8">
+  <title>Transactions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+  
+<div layout:fragment="content">
+	<table>
+	<thead>
+		<tr>
+			<th style="text-align:center">Sender</th>
+			<th style="text-align:center">Receiver</th>
+			<th style="text-align:center">Amount</th>
+			<th style="text-align:center">Date</th>	
+		<th>
+	</thead>
+	<tbody>
+	<div th:if="${resultsempty != null}">
+		<tr>
+			<td style="text-align:center" colspan="4"> No Users Found </td>
+		</tr>
+	</div>
+		<div th:each="result: ${transactions}">
+		<tr>
+			<td style="text-align:center"><h5 th:text="${result.user.credentials.username}">User</h5></td>
+			<td style="text-align:center"><h5 th:text="${result.friend.credentials.username}">Friend</h5></td>
+			<td style="text-align:center"><h5 th:text="${result.amount}">1.00</h5></td>
+			<td style="text-align:center"><h5 th:text="${result.dateDone}">2022-02-13</h5></td>
+		</tr>
+		</div>
+	</tbody>
+</table>
+	
+
+	
+</div>
+
+</body>

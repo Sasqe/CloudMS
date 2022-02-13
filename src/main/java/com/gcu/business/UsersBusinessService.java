@@ -8,7 +8,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
-import com.gcu.controller.rainfall;
 import com.gcu.data.IDataAccess;
 import com.gcu.data.UserDataService;
 import com.gcu.model.CredentialsModel;

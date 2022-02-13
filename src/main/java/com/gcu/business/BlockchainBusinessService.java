@@ -1,30 +1,16 @@
 package com.gcu.business;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
-
-import java.util.HashMap;
-import java.util.List;
-
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gcu.data.BlockchainDataService;
-import com.gcu.data.IDataAccess;
-
-
-import com.gcu.model.Block;
-
-import com.gcu.transaction.Transaction;
-import com.gcu.transaction.TransactionOutput;
+import com.gcu.model.UserModel;
 
 /**
  * Business logic for products
  */
 @Service
-public class BlockchainBusinessService implements IDataAccess<Block> 
+public class BlockchainBusinessService 
 {
 	@Autowired
 	BlockchainDataService DAO;
@@ -36,85 +22,18 @@ public class BlockchainBusinessService implements IDataAccess<Block>
 	{
 		System.out.println("Hello");
 	}
-	/** Creates a product by calling data layer
-	 * @param model (Product model)
-	 * @return true/false
-	 */
-	@Override
-	public boolean create(Block block) {
-		//call DAO to create this model and insert into database, will return true or false
-		return DAO.create(block);
+	
+	// get all transactions by user
+	
+	
+	// send money from one user to another
+	// return false if not enough money
+	public boolean sendMoney(UserModel user, UserModel friend, float amount) {
+		// if the user doesnt have enough money, dont even try and return false
+		if (user.getWallet().getAmount() < amount) {
+			return false;
+		}
+		// otherwise, return the result of the database send money
+		return DAO.sendMoney(user, friend, amount);
 	}
-
-
-	/** finds all products
-	 * @return list of products
-	 * @throws SQLException 
-	 */
-	@Override
-	public ArrayList<Block> read() throws SQLException {
-		//Instantiate new list of products and call DAO to retrieve all products
-		ArrayList<Block> lastblock = DAO.read();
-		//Temporary test list commented out for future testing
-		/*
-		 * productsList.add(new ProductModel(1, "Name 1", "img", "Category", 2.00, 21));
-		 * productsList.add(new ProductModel(2, "Name 2", "img", "Category", 3.00, 22));
-		 * productsList.add(new ProductModel(3, "Name 3", "img", "Category", 4.00, 23));
-		 * productsList.add(new ProductModel(4, "Name 4", "img", "Category", 5.00, 24));
-		 * productsList.add(new ProductModel(5, "Name 5", "img", "Category", 6.00, 25));
-		 * productsList.add(new ProductModel(6, "Name 6", "img", "Category", 7.00, 26));
-		 * productsList.add(new ProductModel(7, "Test 7", "img", "Category", 8.00, 27));
-		 */
-		//return list
-        return lastblock;
-	}
-
-
-	/** finds a product model by its id
-	 * @param id (product id)
-	 * @return product model found
-	 */
-	public Block findById(int id) {
-		//retrieve product from database with id passed as parameter, will return this product
-		return null;
-	}
-
-
-	/** updates a product model in the database
-	 * @param oldProduct (original)
-	 * @param newProduct (updated)
-	 * @return true/false
-	 */
-	@Override
-	public boolean update(Block o, Block n) {
-		return false;
-	}
-
-
-	/** deletes a product from the database
-	 * @param productModel (to be deleted)
-	 * @return true/false
-	 */
-	@Override
-	public boolean delete(Block n) 
-	{
-		return false;
-	}
-	public HashMap<String,TransactionOutput> getUTXOs() throws SQLException {
-		//Instantiate new list of products and call DAO to retrieve all products
-		List<Block> utxos = DAO.read();
-		//Temporary test list commented out for future testing
-		/*
-		 * productsList.add(new ProductModel(1, "Name 1", "img", "Category", 2.00, 21));
-		 * productsList.add(new ProductModel(2, "Name 2", "img", "Category", 3.00, 22));
-		 * productsList.add(new ProductModel(3, "Name 3", "img", "Category", 4.00, 23));
-		 * productsList.add(new ProductModel(4, "Name 4", "img", "Category", 5.00, 24));
-		 * productsList.add(new ProductModel(5, "Name 5", "img", "Category", 6.00, 25));
-		 * productsList.add(new ProductModel(6, "Name 6", "img", "Category", 7.00, 26));
-		 * productsList.add(new ProductModel(7, "Test 7", "img", "Category", 8.00, 27));
-		 */
-		//return list
-        return null;
-	}
-
 }

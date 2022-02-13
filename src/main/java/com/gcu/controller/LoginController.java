@@ -4,8 +4,6 @@ import org.springframework.ui.Model;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
-
-
 /**
  * The controller that handles all the routing for login
  */
@@ -17,6 +15,7 @@ public class LoginController
 	 * @param model (page model)
 	 * @return login page
 	 */
+	// displays the login form, can be accessed at any time CONFIRMED
 	@GetMapping("/login")
 	public String display(Model model) 
 	{

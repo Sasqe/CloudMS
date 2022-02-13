@@ -36,6 +36,7 @@ public class RegisterController
 	 * @param model (page model)
 	 * @return register page
 	 */
+	// displays the register form CONFIRMED
 	@GetMapping("/")
 	public String display(Model model) 
 	{
@@ -55,6 +56,7 @@ public class RegisterController
 	 * @param model (page model)
 	 * @return either register or login page based on if the user info is valid
 	 */
+	// used to create a user in the database and redirects to login if successful CONFIRMED
 	@PostMapping("/doRegister")
 	public String doRegister(@Valid UserModel userModel, BindingResult bindingResult, Model model) 
 	{

@@ -41,6 +41,7 @@ public class ProfileController
 	 * @return the home page
 	 */
 	// the current users profile
+	// displays an editable table CONFIRMED
 	@GetMapping("/")
 	public String display(Model model) 
 	{
@@ -58,12 +59,13 @@ public class ProfileController
 		model.addAttribute("user", user);
 		// Test logging -- print user's username and wallet balance
 		System.out.println(user.getCredentials().getUsername());
-		System.out.println("BALANCE :" + user.getWallet().getBalance());
+		System.out.println("BALANCE :" + user.getWallet().getAmount());
 		// return profile 1, currently logged in user's profile
 		return "profile";
 	}
 	
 	// another users profile
+	// displays another profile in a table CONFIRMED
 	@GetMapping("/viewProfile")
 	public String viewProfile(@RequestParam(name="id") String id, Model model) 
 	{	
@@ -89,6 +91,8 @@ public class ProfileController
 		// return profile 2, friend's profile page.
 		return "profile2";
 	}
+	
+	// removes a friend connection from the database and redirects to profile CONFIRMED
 	@PostMapping("/removeFriend")
 	public String removeFriend(@RequestParam(name="id") String id, Model model) 
 	{
@@ -111,6 +115,8 @@ public class ProfileController
 	    
 	    return "profile";
 	}
+	
+	// adds a friend connection to the database and redirects to profile page CONFIRMED
 	@PostMapping("/addFriend")
 	public String addFriend(@RequestParam(name="id") String id, Model model) 
 	{
@@ -132,6 +138,8 @@ public class ProfileController
 	    //return profile view
 	    return "profile";
 	}
+	
+	// displays a list of users in a table CONFIRMED
 	@PostMapping("/searchUsers")
 	public String searchUsers(@RequestParam(name="id") String id, Model model) 
 	{
@@ -163,6 +171,7 @@ public class ProfileController
 	    return "profiles";
 	}
 	
+	// updates a profile and redirects back to the profile with updated information CONFIRMED
 	@PostMapping("/updateProfile")
 	public String updateProfile(@Valid UserModel userModel, BindingResult bindingResult, Model model) 
 	{
