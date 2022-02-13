@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.gcu.business.RegBusinessService;
+import com.gcu.business.UsersBusinessService;
 import com.gcu.data.UserDataService;
 import com.gcu.model.UserModel;
 
@@ -29,8 +30,9 @@ public class RegisterController
 	
 	@Autowired
 	RegBusinessService reg;
+	
 	@Autowired
-	UserDataService uds;
+	UsersBusinessService ubs;
 	/**
 	 * displays the register page and form
 	 * @param model (page model)
@@ -60,7 +62,7 @@ public class RegisterController
 	@PostMapping("/doRegister")
 	public String doRegister(@Valid UserModel userModel, BindingResult bindingResult, Model model) 
 	{
-		UserModel user = uds.findByUsername(userModel.getCredentials().getUsername());
+		UserModel user = ubs.findByUsername(userModel.getCredentials().getUsername());
 		//doRegister for register view submission
 		//validation error checking
 		if (bindingResult.hasErrors()) 

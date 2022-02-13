@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.gcu.business.BlockchainBusinessService;
 import com.gcu.business.UsersBusinessService;
-import com.gcu.data.BlockchainDataService;
 import com.gcu.model.Transaction;
 import com.gcu.model.UserModel;
 /**
@@ -31,7 +31,7 @@ public class TransactionController
 	private UsersBusinessService bservice;
 	
 	@Autowired
-	private BlockchainDataService blockservice;
+	private BlockchainBusinessService blockservice;
 	/**
 	 * displays the product page that shows all the products in the database
 	 * @param model (page model)

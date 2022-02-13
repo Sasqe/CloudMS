@@ -34,7 +34,7 @@ that come after logging in just to ensure our login functions are working-->
 			<td style="text-align:center" colspan="4"> No Users Found </td>
 		</tr>
 	</div>
-		<div th:each="result: ${users}">
+		<div th:if="${resultsempty == null}" th:each="result: ${users}">
 		<tr>
 			<td style="text-align:center"><h5 th:text="${result.credentials.username}">000000001</h5></td>
 			<td style="text-align:center"><h5 th:text="${result.firstname}">Product 1</h5></td>

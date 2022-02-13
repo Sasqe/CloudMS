@@ -91,7 +91,7 @@ public class BlockchainDataService
 	
 	public ArrayList<Transaction> getTransactionsByUser(UserModel user) {
 		// query string same for add and remove money
-		String sql = "SELECT * FROM transactions WHERE userID = ?";
+		String sql = "SELECT * FROM transactions WHERE userID = ? or friendID = ?";
 		
 		try {
 			//create structure to hold users and transactions
@@ -100,8 +100,12 @@ public class BlockchainDataService
 			ArrayList<Transaction> results = new ArrayList<Transaction>();
 			//Execute SQL query and loop over result set
 			SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql,
+												user.getId(),
 												user.getId());	
 			while(srs.next()){
+				// get the sending user in the transaction
+				user = service.findById(srs.getInt("userID"));
+				// get the receiving user in the transaction
 				friend = service.findById(srs.getInt("friendID"));
 				// create a new transaction
 				transaction = new Transaction(srs.getInt("id"),
