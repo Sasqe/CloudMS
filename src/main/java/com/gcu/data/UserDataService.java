@@ -89,8 +89,69 @@ public class UserDataService implements IDataAccess<UserModel>
 	 */
 	public UserModel findById(int id) 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		//SQL to select all from users where passed credentials match user's credentials
+		String sql = "SELECT A.*, W.*, B.*,C.id AS friendid, C.firstname AS friendfirstname, C.lastname AS friendlastname, C.username AS friendusername, C.email AS friendemail, C.number AS friendnumber\r\n"
+				+ "    FROM users A\r\n"
+				+ "    LEFT JOIN friends B ON A.id=B.users_id\r\n"
+				+ "    LEFT JOIN users C on B.friend_id=C.id\r\n"
+				+ "	LEFT JOIN wallets W ON w.user_id = A.id\r\n"
+				+ " WHERE A.id = '" + id + "'";
+				//create structure to hold users
+				UserModel user = new UserModel();
+				ArrayList<UserModel> friends = new ArrayList<UserModel>();
+				try {
+					//Execute SQL query and loop over result set
+					SqlRowSet srs = jdbcTemplateObject.queryForRowSet(sql);	
+					byte[] privatekey = null;
+					byte[] publickey = null;
+					int i = 0;
+					while(srs.next())
+					{
+						Wallet wallet = new Wallet();
+						privatekey = (byte[]) srs.getObject("privatekey");
+						publickey = (byte[]) srs.getObject("publickey");
+						if (privatekey != null && publickey != null) {
+						KeyPair keypair = rainfall.createKeyPair(privatekey, publickey);
+						wallet.setPrivateKey(keypair.getPrivate());
+						wallet.setPublicKey(keypair.getPublic());
+						}
+						else {
+							wallet.setPublicKey(null);
+							wallet.setPrivateKey(null);
+						}
+						user = new UserModel(srs.getInt("id"),
+												srs.getString("firstname"),
+												srs.getString("lastname"),
+												srs.getString("email"),
+												srs.getString("number"),
+												new CredentialsModel(srs.getString("username"),
+															   srs.getString("password")),
+												wallet,
+												friends);
+						UserModel friend = new UserModel(srs.getInt("friendid"),
+								srs.getString("friendfirstname"),
+								srs.getString("friendlastname"),
+								srs.getString("friendemail"),
+								srs.getString("friendnumber"),
+								new CredentialsModel(srs.getString("friendusername"),
+											   null),
+								null,
+								null);
+						if (friend.getCredentials().getUsername() != null)
+						user.getFriends().add(friend);
+					}
+					//there should only be one user with unique credentials
+					if (user.getFirstname() != null) {
+						return user;
+					}
+					// else return false
+					return null;
+				}
+				//catch exception and print stack trace
+				catch (Exception e) {
+					e.printStackTrace();
+					return null;
+				}
 	}
 
 	/**
@@ -126,6 +187,12 @@ public class UserDataService implements IDataAccess<UserModel>
 		
 		return false;
 	}
+	
+	/**
+	 * create a wallet using a wallet object
+	 * @param wallet (wallet model)
+	 * @return true/false
+	 */
 	public boolean createWallet(Wallet wallet) 
 	{
 		String sql =
@@ -156,7 +223,26 @@ public class UserDataService implements IDataAccess<UserModel>
 	@Override
 	public boolean update(UserModel oldt, UserModel newt) 
 	{
-		// TODO Auto-generated method stub
+		//sql statement for updating values
+		String sql = "UPDATE users SET firstname = ?, lastname = ?, username = ?, email = ?, number = ? WHERE id = ?";
+		try 
+		{
+			//execute SQL insert
+			int rows = jdbcTemplateObject.update(sql,
+								newt.getFirstname(),
+								newt.getLastname(),
+								newt.getCredentials().getUsername(),
+								newt.getEmail(),
+								newt.getNumber(),
+								oldt.getId());
+			//return result of update
+			return rows == 1 ? true : false;
+		}
+		//catch exception and print stack trace
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
 		return false;
 	}
 
@@ -170,6 +256,12 @@ public class UserDataService implements IDataAccess<UserModel>
 	{
 	return false;
 	}
+	/**
+	 * remove friend connection from database
+	 * @param friend (friend connection user)
+	 * @param user (logged in user)
+	 * @return null
+	 */
 	public UserModel removeFriend(UserModel friend, UserModel user) 
 	{
 		String sql =
@@ -187,6 +279,12 @@ public class UserDataService implements IDataAccess<UserModel>
 			}
 			return null;
 	}
+	/**
+	 * add friend connection in database
+	 * @param friend (friend connection user)
+	 * @param user (logged in user)
+	 * @return null
+	 */
 	public UserModel addFriend(UserModel friend, UserModel user) 
 	{
 		String sql =
@@ -275,6 +373,11 @@ public class UserDataService implements IDataAccess<UserModel>
 			return null;
 		}
 	}
+	/**
+	 * search for multiple users by username
+	 * @param username (searched username)
+	 * @return users (list of found users)
+	 */
 	public ArrayList<UserModel> searchUsers(String username) 
 	{
 		//SQL to select all from users where passed credentials match user's credentials
@@ -315,5 +418,4 @@ public class UserDataService implements IDataAccess<UserModel>
 			return null;
 		}
 	}
-	
 }

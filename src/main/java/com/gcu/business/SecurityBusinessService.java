@@ -26,6 +26,9 @@ public class SecurityBusinessService implements UserDetailsService
 	//Autowired DataAccess interface as DAO
 	@Autowired
 	UserDataService DAO;
+	
+	@Autowired
+	UsersBusinessService service;
 	/**
 	 * Validates that the User logging in is a valid user
 	 * @param credentials User model containing username and password
@@ -47,7 +50,7 @@ public class SecurityBusinessService implements UserDetailsService
 
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		//Create new user by finding it in the database by username
-		UserModel user = DAO.findByUsername(username);
+		UserModel user = service.findByUsername(username);
 		//If user is found, use GrantedAuthority to add user to authenticated list
 		if (user != null)
 		{

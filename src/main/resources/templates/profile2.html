@@ -38,8 +38,8 @@ that come after logging in just to ensure our login functions are working-->
 			<td style="text-align:center"><h5 th:text="${friend.lastname}">1.00</h5></td>
 			<td style="text-align:center"><h5 th:text="${friend.email}">1</h5></td>
 			<td style="text-align:center"><h5 th:text="${friend.number}">1</h5></td>
-			<td style="text-align:center;"><form action="#" th:action="@{/blockchain/transactionView}" method="post" th:object="${UserModel}"><input type='hidden' name='id' th:value="${friend.credentials.username}"><input type='submit' value='Send Money'></form></td>
-			<td style="text-align:center;"><form action="#" th:action="@{/profile/removeFriend}" method="post" th:object="${UserModel}"><input type='hidden' name='id' th:value="${friend.credentials.username}"><input type='submit' value='Remove Friend'></form></td>
+			<td style="text-align:center;"><form action="#" th:action="@{/blockchain/transactionView}" method="post" th:object="${UserModel}"><input type='hidden' name='id' th:value="${friend.credentials.username}"><input class="tableBtn" type='submit' value='Send Money'></form></td>
+			<td style="text-align:center;"><form action="#" th:action="@{/profile/removeFriend}" method="post" th:object="${UserModel}"><input type='hidden' name='id' th:value="${friend.credentials.username}"><input class="tableBtn" type='submit' value='Remove Friend'></form></td>
 		</tr>
 	</tbody>
 </table>

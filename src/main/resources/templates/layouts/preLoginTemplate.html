@@ -11,13 +11,6 @@
 	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="/css/style.css">
- <style>
-        body {
-            background-image: url('/images/bg2.jpg');
-         	background-size: cover;
-
-        }
-    </style>
 </head>
 <body>
 	<div align="center">
@@ -26,7 +19,13 @@
 		
 		<div class="textContainer">
 			<!-- Page Title and Log -->
-			<h2 th:text="${title}">Default Message Text</h2><br/>
+			<h2 th:text="${title}" class="titleText big caps">Default Message Text</h2><br/>
+			
+			<section layout:fragment="videoBackground">
+			<video autoplay muted loop id="myVideo">
+  				<source src="/images/video.mp4" type="video/mp4">
+			</video>
+			</section>
 			
 			<!--Main Body Content-->
 			<section layout:fragment="content">
@@ -34,7 +33,7 @@
 			</section>
 		</div>
 		
-		<!--Insert Fotter Fragment-->
+		<!--Insert Footer Fragment-->
 		<div th:replace="layouts/preLogin :: footer">My Footer</div>
 	</div>
 </body>

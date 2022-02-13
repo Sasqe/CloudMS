@@ -19,6 +19,9 @@ public class RegBusinessService
 	//Autowire UserDataService as DAO
 	@Autowired
 	UserDataService DAO;
+	
+	@Autowired
+	UsersBusinessService service;
 	/**
 	 * Creates a new user and prints the information to the console
 	 * @param user 9user model that has all elements that make up a user)
@@ -37,10 +40,13 @@ public class RegBusinessService
 	    
 	    //Encode user's credentials before inserting into database
 	    user = encodeCredentials(user);
-	    //call DAO create to insert object in the database
-	    DAO.create(user);
-	    DAO.createWallet(user.getWallet());
+	    //call business service create to insert object in the database
+	    service.create(user);
+	    service.createWallet(user.getWallet());
+	    // DAO.create(user);
+	    // DAO.createWallet(user.getWallet());
 	}
+	
 	/** helper method to encode the user's credentials 
 	 * @param user (user model to be encoded)
 	 * @return updated encoded user model

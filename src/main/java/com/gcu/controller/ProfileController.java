@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.gcu.business.UsersBusinessService;
 import com.gcu.data.UserDataService;
 import com.gcu.model.UserModel;
 
@@ -31,11 +32,15 @@ public class ProfileController
 {
 	@Autowired
 	UserDataService service;
+	
+	@Autowired
+	UsersBusinessService bservice;
 	/**
 	 * A route to home that sets the title and welcome message
 	 * @param model (page model)
 	 * @return the home page
 	 */
+	// the current users profile
 	@GetMapping("/")
 	public String display(Model model) 
 	{
@@ -45,7 +50,7 @@ public class ProfileController
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (!(authentication instanceof AnonymousAuthenticationToken)) {
 			System.out.println("USER BEING SET!!");
-			user = service.findByUsername(authentication.getName());
+			user = bservice.findByUsername(authentication.getName());
 		}
 		// Add user to attribute
 		model.addAttribute("title", "Cloud Computing Testing");
@@ -57,6 +62,8 @@ public class ProfileController
 		// return profile 1, currently logged in user's profile
 		return "profile";
 	}
+	
+	// another users profile
 	@GetMapping("/viewProfile")
 	public String viewProfile(@RequestParam(name="id") String id, Model model) 
 	{	
@@ -67,10 +74,10 @@ public class ProfileController
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (!(authentication instanceof AnonymousAuthenticationToken)) {
 			System.out.println("USER BEING SET!!");
-			user = service.findByUsername(authentication.getName());
+			user = bservice.findByUsername(authentication.getName());
 		}
 		// Find friend in database via param ID
-		friend = service.findByUsername(id);
+		friend = bservice.findByUsername(id);
 		// add attributes containing user, friend, and page messages
 		model.addAttribute("title", "Cloud Computing Testing");
 		model.addAttribute("welcomeMessage", "Welcome");
@@ -90,14 +97,16 @@ public class ProfileController
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (!(authentication instanceof AnonymousAuthenticationToken)) {
 			System.out.println("USER BEING SET!!");
-			user = service.findByUsername(authentication.getName());
+			user = bservice.findByUsername(authentication.getName());
 		}
 		// find friend in database from param id
-		friend = service.findByUsername(id);
+		friend = bservice.findByUsername(id);
 		//Add attributes and set attribute 'title' as friend deleted succesfully n
 	    model.addAttribute("title", "Friend Deleted Successfully");
 	    //remove friend return profile view
-	    service.removeFriend(friend, user);
+	    bservice.removeFriend(friend, user);
+	    // update friends list
+	    user = bservice.findByUsername(user.getCredentials().getUsername());
 	    model.addAttribute("user", user);
 	    
 	    return "profile";
@@ -110,11 +119,13 @@ public class ProfileController
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (!(authentication instanceof AnonymousAuthenticationToken)) {
 			System.out.println("USER BEING SET!!");
-			user = service.findByUsername(authentication.getName());
+			user = bservice.findByUsername(authentication.getName());
 		}
-		friend = service.findByUsername(id);
+		friend = bservice.findByUsername(id);
 		//Add friend method from user and friend retrieved from database
-		service.addFriend(friend, user);
+		bservice.addFriend(friend, user);
+		// update friends list
+	    user = bservice.findByUsername(user.getCredentials().getUsername());
 		model.addAttribute("title", "Friend Added Successfully");
 	    model.addAttribute("user", user);
 	    model.addAttribute("friend", friend);
@@ -129,10 +140,10 @@ public class ProfileController
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (!(authentication instanceof AnonymousAuthenticationToken)) {
 			System.out.println("USER BEING SET!!");
-			user = service.findByUsername(authentication.getName());
+			user = bservice.findByUsername(authentication.getName());
 		}
 		// search all users containing search query in their username
-		results = service.searchUsers(id);
+		results = bservice.searchUsers(id);
 		if (results.size() < 1) {
 			model.addAttribute("resultsempty", true);
 		}
@@ -151,5 +162,26 @@ public class ProfileController
 	    // return profile page
 	    return "profiles";
 	}
-
+	
+	@PostMapping("/updateProfile")
+	public String updateProfile(@Valid UserModel userModel, BindingResult bindingResult, Model model) 
+	{
+		// get the current information for the user in the database
+		UserModel user = bservice.findById(userModel.getId());
+		// use service to update that user with the new user (old, new)
+		boolean result = bservice.update(user, userModel);
+		// get the updated user
+		user = bservice.findById(userModel.getId());
+		// Add user to attribute
+		if (result) {
+			model.addAttribute("title", "Profile Updated");
+		}
+		else {
+			model.addAttribute("title", "Unable to Update Profile");
+		}
+		model.addAttribute("welcomeMessage", "Welcome");
+		model.addAttribute("user", user);
+		// redirect the user to their updated profile
+		return "profile";	
+	}
 }

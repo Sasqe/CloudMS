@@ -1,6 +1,8 @@
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap');
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -64,13 +66,15 @@ html {
 }
  table {
 	 border-collapse: collapse;
-	 box-shadow: 0 5px 10px #e1e5ee;
+	 box-shadow: 0 3px 10px #eee;
 	 background-color: white;
 	 text-align: left;
 	 overflow: hidden;
+	 color: #000 !important;
+	 border-radius: 3px;
 }
  thead {
-	 box-shadow: 0 5px 10px #e1e5ee;
+	 box-shadow: 0 5px 10px #eee;
 }
  th {
 	 padding: 1rem 2rem;
@@ -103,7 +107,11 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 20px;
-  
+  color: #fff !important;
+  font-family: 'Nunito';
+  background: #000;
+  background-size: cover;
+  background-repeat: no-repeat;  
 }
 .footer {
   position: absolute;
@@ -111,6 +119,7 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+  color: #fff !important;
 }
 /* Dropdown Button */
 .dropbtn {
@@ -152,3 +161,164 @@ body {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: gray;}
+
+.footer-text {
+	color: white !important; 
+	text-align: center !important; 
+	width: 100% !important;
+	line-height: 60px !important;
+}
+
+.navbar {
+	background-color: #000 !important;
+}
+
+.footerStyled {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  white-space: nowrap;
+  color: #fff !important;
+  background-color: #000 !important;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  object-fit: cover;
+  height: 100vh !important;
+  width: 100vw !important;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.titleText {
+	line-height: 1.5 !important;
+	background: rgba(0,0,0,.8);
+	display: inline-block;
+	padding: 10px 25px;
+}
+
+.big {
+	font-size: 35px !important;
+}
+
+.small {
+	font-size: 28px !important;
+	margin-bottom: 0px !important;
+}
+
+.smallest {
+	font-size: 16px !important;
+}
+
+.caps {
+	text-transform: uppercase;
+	font-weight: 600 !important;
+	letter-spacing: 2px !important;
+}
+
+.textContainer {
+	max-width: 1600px !important;
+	padding: 50px !important;
+}
+
+.login-box {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+	background: rgba(0,0,0,.8) !important;
+	padding: 40px !important;
+	width: auto !important;
+}
+
+.login-box h1 {
+	border-bottom: 6px solid #4ca1be !important;
+}
+
+.textbox {
+	width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+	border-bottom: 1px solid #4ca1be !important;
+}
+
+.buttn, .btn, .tableBtn { 
+	border: 2px solid #4ca1be !important;
+	color: #fff !important;
+	transition: all .3s ease;
+    background: none;
+    color: white;
+    padding: 5px;
+    font-size: 18px;
+    margin: 12px 0;
+}
+
+.tableBtn, .tableBtn:hover {
+	border-radius: 3px !important;
+	color: #000 !important;
+}
+
+.buttn:hover, .btn:hover, .btn:active, .btn:focus, .tableBtn:hover {
+	background-color: #4ca1be;
+	color: #fff !important;
+}
+
+.textbox input {
+	border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 18px;
+    width: 80%;
+    float: left;
+    margin: 0 10px;
+}
+
+.searchBar {
+	border: 2px solid #4ca1be !important;
+	color: #fff !important;
+	transition: all .3s ease;
+    background: none;
+    color: white !important;
+    padding: 5px;
+    font-size: 18px;
+    margin: 12px 0;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: #4ca1be !important;
+}
+
+.dropdown:hover .nav-link, .dropdown:hover .nav-link, .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+	color: #fff !important;
+}
+
+.updateTable {
+	line-height: 1.5;
+	border-bottom: 2px solid #4ca1be;
+	border-top: 0px solid transparent;
+	border-left: 0px solid transparent;
+	border-right: 0px solid transparent;
+	color: #000;
+	border-radius: 0px;
+	transition: all .3s ease;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	background: transparent;
+}
+
+.updateTable:focus, .updateTable:focus-visible {
+	border-radius: 3px;
+	border-bottom: 2px solid #000;
+	outline: 0px solid transparent !important;
+	background: transparent;
+}

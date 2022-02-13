@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.gcu.business.UsersBusinessService;
 import com.gcu.data.UserDataService;
 import com.gcu.model.UserModel;
 
@@ -22,6 +23,9 @@ public class HomeController
 {
 	@Autowired
 	UserDataService service;
+	
+	@Autowired
+	UsersBusinessService bservice;
 	/**
 	 * A route to home that sets the title and welcome message
 	 * @param model (page model)
@@ -49,7 +53,7 @@ public class HomeController
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (!(authentication instanceof AnonymousAuthenticationToken)) {
 			System.out.println("USER BEING SET!!");
-			user = service.findByUsername(authentication.getName());
+			user = bservice.findByUsername(authentication.getName());
 		}
 		//Simply return a Model w/an attribute named 
 		//message and return a view named home using a string

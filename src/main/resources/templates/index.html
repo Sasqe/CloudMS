@@ -10,11 +10,12 @@
 	<!--This replaces the body from the preLogin Layout-->
 		<div layout:fragment="content">
 			<!--This is replaced by the message sent by the home controller-->
-			<h2 th:text="${welcomeMessage}">This is my default text</h2><br/>
-			<h3>Disclaimer:</h3>
-			<p style="width: 50%;">
+			<h2 th:text="${welcomeMessage}" class="titleText big">This is my default text</h2><br/>
+			<h3 class="titleText small">Disclaimer:</h3><br>
+			<p class="titleText smallest">
 				Cloud Computing Platforms Testing
 			</p>
+		</div>
 	</body>
 
 </html>

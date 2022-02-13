@@ -16,13 +16,6 @@
 	<link rel="stylesheet" href="/css/all.min.css">
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
- <style>
-        body {
-            background-image: url('/images/bg2.jpg');
-         	background-size: cover;
-
-        }
-    </style>
 <body>
 	<div align="center">
 		<!--Insert Header Fragment-->
@@ -30,7 +23,13 @@
 		
 		<div class="textContainer">
 			<!-- Page Title and Log -->
-			<h2 th:text="${title}">Default Message Text</h2><br/>
+			<h2 th:text="${title}" class="titleText big">Default Message Text</h2><br/>
+			
+			<section layout:fragment="videoBackground">
+			<video autoplay muted loop id="myVideo">
+  				<source src="/images/main.mp4" type="video/mp4">
+			</video>
+			</section>
 			
 			<!--Main Body Content-->
 			<section layout:fragment="content">
@@ -38,7 +37,7 @@
 			</section>
 		</div>
 		
-		<!--Insert Fotter Fragment-->
+		<!--Insert Footer Fragment-->
 		<div th:replace="layouts/postLogin :: footer">My Footer</div>
 	</div>
 </body>

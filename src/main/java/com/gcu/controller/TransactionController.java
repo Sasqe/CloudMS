@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.gcu.business.UsersBusinessService;
 import com.gcu.data.BlockchainDataService;
 import com.gcu.data.IDataAccess;
 import com.gcu.data.UserDataService;
@@ -40,6 +41,10 @@ public class TransactionController
 {
 	@Autowired
 	private UserDataService service;
+	
+	@Autowired
+	private UsersBusinessService bservice;
+	
 	@Autowired
 	private BlockchainDataService blockservice;
 	/**
@@ -51,7 +56,7 @@ public class TransactionController
 	public String display(Model model) 
 	{
 		//display method for landing on the all products page, passes services get all products in as 'products' attribute
-		model.addAttribute("products", service.read());
+		model.addAttribute("products", bservice.read());
 		//return products view
 		return "products";
 	}
@@ -63,12 +68,13 @@ public class TransactionController
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (!(authentication instanceof AnonymousAuthenticationToken)) {
 			System.out.println("USER BEING SET!!");
-			user = service.findByUsername(authentication.getName());
+			user = bservice.findByUsername(authentication.getName());
 		}
-		friend = service.findByUsername(id);
+		friend = bservice.findByUsername(id);
 		//editView method for landing on the edit page, requestparam ID for finding which user was clicked on
 		//Add attributes and set attribute 'productModel' as the object that was clicked on
-	    model.addAttribute("title", "Send Money");
+		String message = "Send Money: " + user.getCredentials().getUsername() + " to " + friend.getCredentials().getUsername();
+	    model.addAttribute("title", message);
 	    model.addAttribute("user", user);
 	    model.addAttribute("friend", friend);
 	    //return updateProduct view
@@ -85,9 +91,9 @@ public class TransactionController
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (!(authentication instanceof AnonymousAuthenticationToken)) {
 			System.out.println("USER BEING SET!!");
-			user = service.findByUsername(authentication.getName());
+			user = bservice.findByUsername(authentication.getName());
 		}
-		friend = service.findByUsername(id);
+		friend = bservice.findByUsername(id);
 		//editView method for landing on the edit page, requestparam ID for finding which user was clicked on
 		//Add attributes and set attribute 'productModel' as the object that was clicked on
 	    model.addAttribute("title", "Send Money");

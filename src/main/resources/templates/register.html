@@ -12,45 +12,44 @@
 <body>
   
 <div layout:fragment="content">
+<div class="login-box">
 <form action="#" th:action="@{doRegister}" th:object="${userModel}" method="post">
-	<table>
-		<tr>
-			<!--First name attribute of the user model with error checking-->
-			<td>First Name:</td><td><input type="text" th:field="*{firstname}"></td><td><h5 style="color:red" th:if"{#fields.hasErrors('firstname')}" th:errors="*{firstname}">First Name Error</h5></td>
-		</tr>
-		<tr>
-			<!--Last name attribute of the user model with error checking-->
-			<td>Last Name:</td><td><input type="text" th:field="*{lastname}"></td><td><h5 style="color:red" th:if"{#fields.hasErrors('lastname')}" th:errors="*{lastname}">Last Name Error</h5></td>
-		</tr>
-		<tr>
-			<!--Username attribute of the user model with error checking-->
-			<td>Username:</td><td><input type="text" th:field="*{credentials.username}"></td><td><h5 style="color:red" th:if"{#fields.hasErrors('credentials.username')}" th:errors="*{credentials.username}">User Name Error</h5></td>
-		</tr>
-		<tr>
-			<!--Password attribute of the user model with error checking-->
-			<td>Password:</td><td><input type="password" th:field="*{credentials.password}"></td><td><h5 style="color:red" th:if"{#fields.hasErrors('credentials.password')}" th:errors="*{credentials.password}">Password Error</h5></td>
-		</tr>
-		<tr>
-			<!--Email attribute of the user model with error checking-->
-			<td>Email:</td><td><input type="text" th:field="*{email}"></td><td><h5 style="color:red" th:if"{#fields.hasErrors('email')}" th:errors="*{email}">Email Error</h5></td>
-		</tr>
-		<tr>
-			<!--Phone Number attribute of the user model with error checking-->
-			<td>Phone Number:</td><td><input type="text" th:field="*{number}"></td><td><h5 style="color:red" th:if"{#fields.hasErrors('number')}" th:errors="*{number}">Phone Number Error</h5></td>
-		</tr>
-		<tr>
-			<td colspan="3"><input class="edit edit-edit" type="submit" value="Register" /></td>
-		</tr>
-	</table>
+<!-- class = no-outline class=textbox -->
+	<div class="textbox">
+		<input class="no-outline" type="text" th:field="*{firstname}" placeholder="First Name">
+		<h5 style="color:white" th:if"{#fields.hasErrors('firstname')}" th:errors="*{firstname}">First Name Error</h5>
+	</div>
+	<div class="textbox">
+		<input class="no-outline" type="text" th:field="*{lastname}" placeholder="Last Name">
+		<h5 style="color:white" th:if"{#fields.hasErrors('lastname')}" th:errors="*{lastname}">Last Name Error</h5>
+	</div>
+	<div class="textbox">
+		<input class="no-outline" type="text" th:field="*{credentials.username}" placeholder="Username">
+		<h5 style="color:white" th:if"{#fields.hasErrors('credentials.username')}" th:errors="*{credentials.username}">Username Error</h5>
+	</div>
+	<div class="textbox">
+		<input class="no-outline" type="password" th:field="*{credentials.password}" placeholder="Password">
+		<h5 style="color:white" th:if"{#fields.hasErrors('credentials.password')}" th:errors="*{credentials.password}">Password Error</h5>
+	</div>
+	<div class="textbox">
+		<input class="no-outline" type="text" th:field="*{email}" placeholder="Email">
+		<h5 style="color:white" th:if"{#fields.hasErrors('email')}" th:errors="*{email}">Email Error</h5>
+	</div>
+	<div class="textbox">
+		<input class="no-outline" type="text" th:field="*{number}" placeholder="Phone Number">
+		<h5 style="color:white" th:if"{#fields.hasErrors('number')}" th:errors="*{number}">Phone Number Error</h5>
+	</div>
+	
+	<input style="width: 100%;" class="buttn" type="submit" value="Register" />
 	
 	<!--This is where all errors from the above form are displayed-->
 	<div th:if="${#fields.hasErrors('*')}">List of Errors</div>
 	<div th:each="err : ${#fields.errors('*')}">
-		<span style="color:red" th:text="${err}" class="fieldError"></span>
+		<span style="color:white" th:text="${err}" class="fieldError"></span>
 	</div>
 	
 </form>
-
+</div>
 </div>
 
 <script>
