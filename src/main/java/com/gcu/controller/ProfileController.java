@@ -39,40 +39,47 @@ public class ProfileController
 	@GetMapping("/")
 	public String display(Model model) 
 	{
+		// Create empty user model
 		UserModel user = new UserModel();
+		// Use auth security context to find currently logged in user
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (!(authentication instanceof AnonymousAuthenticationToken)) {
 			System.out.println("USER BEING SET!!");
 			user = service.findByUsername(authentication.getName());
 		}
-		//Simply return a Model w/an attribute named 
-		//message and return a view named home using a string
+		// Add user to attribute
 		model.addAttribute("title", "Cloud Computing Testing");
 		model.addAttribute("welcomeMessage", "Welcome");
 		model.addAttribute("user", user);
+		// Test logging -- print user's username and wallet balance
 		System.out.println(user.getCredentials().getUsername());
 		System.out.println("BALANCE :" + user.getWallet().getBalance());
+		// return profile 1, currently logged in user's profile
 		return "profile";
 	}
 	@GetMapping("/viewProfile")
 	public String viewProfile(@RequestParam(name="id") String id, Model model) 
 	{	
+		// create new EMPTY user and friend model
 		UserModel user = new UserModel();
 		UserModel friend = new UserModel();
+		// Use authentication context to grab currently logged in user
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (!(authentication instanceof AnonymousAuthenticationToken)) {
 			System.out.println("USER BEING SET!!");
 			user = service.findByUsername(authentication.getName());
 		}
+		// Find friend in database via param ID
 		friend = service.findByUsername(id);
-		
-		//Simply return a Model w/an attribute named 
-		//message and return a view named home using a string
+		// add attributes containing user, friend, and page messages
 		model.addAttribute("title", "Cloud Computing Testing");
 		model.addAttribute("welcomeMessage", "Welcome");
+		// Add user and friend attributes to profile view
 		model.addAttribute("user", user);
 		model.addAttribute("friend", friend);
+		// Test logging -- print the credentials of the users' friends
 		System.out.println("CREDENTIALS ::" + friend.getCredentials().getUsername());
+		// return profile 2, friend's profile page.
 		return "profile2";
 	}
 	@PostMapping("/removeFriend")
@@ -85,14 +92,14 @@ public class ProfileController
 			System.out.println("USER BEING SET!!");
 			user = service.findByUsername(authentication.getName());
 		}
+		// find friend in database from param id
 		friend = service.findByUsername(id);
-		//editView method for landing on the edit page, requestparam ID for finding which user was clicked on
-		//Add attributes and set attribute 'productModel' as the object that was clicked on
+		//Add attributes and set attribute 'title' as friend deleted succesfully n
 	    model.addAttribute("title", "Friend Deleted Successfully");
+	    //remove friend return profile view
+	    service.removeFriend(friend, user);
 	    model.addAttribute("user", user);
-	    model.addAttribute("friend", friend);
-	    //return updateProduct view
-	    service.removeFriend(friend, user.getId());
+	    
 	    return "profile";
 	}
 	@PostMapping("/addFriend")
@@ -106,13 +113,12 @@ public class ProfileController
 			user = service.findByUsername(authentication.getName());
 		}
 		friend = service.findByUsername(id);
-		//editView method for landing on the edit page, requestparam ID for finding which user was clicked on
-		//Add attributes and set attribute 'productModel' as the object that was clicked on
-	    model.addAttribute("title", "Friend Deleted Successfully");
+		//Add friend method from user and friend retrieved from database
+		service.addFriend(friend, user);
+		model.addAttribute("title", "Friend Added Successfully");
 	    model.addAttribute("user", user);
 	    model.addAttribute("friend", friend);
-	    //return updateProduct view
-	    service.addFriend(friend, user.getId());
+	    //return profile view
 	    return "profile";
 	}
 	@PostMapping("/searchUsers")
@@ -125,22 +131,24 @@ public class ProfileController
 			System.out.println("USER BEING SET!!");
 			user = service.findByUsername(authentication.getName());
 		}
+		// search all users containing search query in their username
 		results = service.searchUsers(id);
 		if (results.size() < 1) {
 			model.addAttribute("resultsempty", true);
 		}
-		//editView method for landing on the edit page, requestparam ID for finding which user was clicked on
-		//Add attributes and set attribute 'productModel' as the object that was clicked on
+		// add title and user attributes
 	    model.addAttribute("title", "Results");
 	    model.addAttribute("user", user);
+	    // ONLY add results attribute if result set is not empty
 	    if (results.size() > 0)
 	    model.addAttribute("users", results);
-	    //return updateProduct view
+	    //Test logging -- print users in the result set
 	    System.out.println(id);
 	    for (int i = 0; i < results.size(); i++) {
 	    	System.out.println("RESULT " + i);
 	    	System.out.println(results.get(i).getFirstname() + results.get(i).getLastname() + results.get(i).getCredentials().getUsername() + results.get(i).getEmail() + results.get(i).getNumber());
 	    }	
+	    // return profile page
 	    return "profiles";
 	}
 

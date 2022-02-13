@@ -170,22 +170,39 @@ public class UserDataService implements IDataAccess<UserModel>
 	{
 	return false;
 	}
-	public boolean removeFriend(UserModel t, int id) 
+	public UserModel removeFriend(UserModel friend, UserModel user) 
 	{
 		String sql =
 				 "DELETE FROM friends WHERE users_id = ? AND friend_id = ?";
 			try {
 
-				  int rows = jdbcTemplateObject.update(sql, id, t.getId()
+				  int rows = jdbcTemplateObject.update(sql, user.getId(), friend.getId()
 						  									); 
 				  
-				  if (rows > 0) { System.out.println("A row has been inserted successfully.");	return true; }
+				  if (rows > 0) { System.out.println("A row has been removed successfully."); user = findByUsername(user.getCredentials().getUsername()); return user; }
 				  
 				}
 			catch (Exception ex) {
 				ex.printStackTrace();
 			}
-			return false;
+			return null;
+	}
+	public UserModel addFriend(UserModel friend, UserModel user) 
+	{
+		String sql =
+				 "INSERT INTO `friends`(`users_id`, `friend_id`) VALUES (?,?)";
+			try {
+
+				  int rows = jdbcTemplateObject.update(sql, user.getId(), friend.getId()
+						  									); 
+				  
+				  if (rows > 0) { System.out.println("A row has been inserted successfully."); user = findByUsername(user.getCredentials().getUsername()); return user; }
+				  
+				}
+			catch (Exception ex) {
+				ex.printStackTrace();
+			}
+			return null;
 	}
 	/**
 	 * Find user by username
