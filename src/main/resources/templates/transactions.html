@@ -28,10 +28,10 @@ that come after logging in just to ensure our login functions are working-->
 	<tbody>
 	<div th:if="${resultsempty != null}">
 		<tr>
-			<td style="text-align:center" colspan="4"> No Previous Transactions </td>
+			<td style="text-align:center" colspan="4"> No Transaction History </td>
 		</tr>
 	</div>
-		<div th:each="result: ${transactions}">
+		<div th:if="${resultsempty == null}" th:each="result: ${transactions}">
 		<tr>
 			<td style="text-align:center"><h5 th:text="${result.user.credentials.username}">User</h5></td>
 			<td style="text-align:center"><h5 th:text="${result.friend.credentials.username}">Friend</h5></td>

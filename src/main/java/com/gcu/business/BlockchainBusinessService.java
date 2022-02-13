@@ -1,9 +1,12 @@
 package com.gcu.business;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gcu.data.BlockchainDataService;
+import com.gcu.model.Transaction;
 import com.gcu.model.UserModel;
 
 /**
@@ -24,7 +27,10 @@ public class BlockchainBusinessService
 	}
 	
 	// get all transactions by user
-	
+	public ArrayList<Transaction> getTransactionsByUser(UserModel user) {
+		ArrayList<Transaction> transactions = DAO.getTransactionsByUser(user);
+		return transactions;
+	}
 	
 	// send money from one user to another
 	// return false if not enough money

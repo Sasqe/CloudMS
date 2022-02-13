@@ -10,20 +10,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.gcu.business.UsersBusinessService;
-import com.gcu.data.UserDataService;
 import com.gcu.model.UserModel;
 
 /**
+ * Chris King
+ * Kacey Morris
+ * CST 323 Cloud Computing
+ * Milestone 2 Local Hosting
  * simple welcome controller that returns a view name
  *
  */
 @Controller
 @RequestMapping("/")
 public class HomeController 
-{
-	@Autowired
-	UserDataService service;
-	
+{	
 	@Autowired
 	UsersBusinessService bservice;
 	/**
@@ -61,10 +61,12 @@ public class HomeController
 		model.addAttribute("welcomeMessage", "Welcome");
 		model.addAttribute("user", user);
 		System.out.println("USERS FRIENDS: " + user.getFriends().size());
+		// if there were no friends, tell them
 		if (user.getFriends().size() < 1) {
 			model.addAttribute("nofriends", 1);
 			System.out.println("NO FRIENDS");
 		}
+		// print out all friends
 		for (int i = 0; i < user.getFriends().size(); i++) {
 			System.out.println(user.getFriends().get(i).getCredentials().getUsername());
 		}
