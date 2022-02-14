@@ -100,7 +100,7 @@ public class ProfileController
 		// find friend in database from param id
 		friend = bservice.findByUsername(id);
 		//Add attributes and set attribute 'title' as friend deleted succesfully n
-	    model.addAttribute("title", "Friend Deleted Successfully");
+	    model.addAttribute("title", "Friend Removed Successfully");
 	    //remove friend return profile view
 	    bservice.removeFriend(friend, user);
 	    // update friends list
