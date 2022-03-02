@@ -1,6 +1,8 @@
 package com.gcu.data;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +48,7 @@ public class BlockchainDataService
 		float friendNewBalance = friend.getWallet().getAmount() + amount;
 		System.out.println("user new balance " + userNewBalance  + " friend new balance " + friendNewBalance);
 		LocalDate time = LocalDate.now();
+		
 		// query string same for add and remove money
 		String sql = "UPDATE wallets SET balance = ? WHERE user_id = ?";
 		
@@ -107,17 +110,19 @@ public class BlockchainDataService
 				user = service.findById(srs.getInt("userID"));
 				// get the receiving user in the transaction
 				friend = service.findById(srs.getInt("friendID"));
+
 				// create a new transaction
 				transaction = new Transaction(srs.getInt("id"),
 										user,
 										friend,
 										srs.getFloat("amount"),
 										srs.getDate("dateDone").toLocalDate());
+
 				// add the transaction to the list
 				results.add(transaction);
 			}
 			// if there are results, return the results
-			if (results.size() > 0) {
+			if (results == null || results.size() > 0) {
 				return results;
 			}
 			// else return false

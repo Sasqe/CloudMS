@@ -123,7 +123,7 @@ public class TransactionController
 		
 		// get all transactions for this user
 		results = blockservice.getTransactionsByUser(user);
-		if (results.size() < 1) {
+		if (results == null || results.size() < 1) {
 			model.addAttribute("resultsempty", true);
 		}
 		else {
