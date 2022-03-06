@@ -72,19 +72,20 @@ html {
 	 overflow: hidden;
 	 color: #000 !important;
 	 border-radius: 3px;
+	 margin: 20px !important;
 }
  thead {
 	 box-shadow: 0 5px 10px #eee;
 }
  th {
-	 padding: 1rem 2rem;
+	 padding: 10px 20px !important;
 	 text-transform: uppercase;
 	 letter-spacing: 0.1;
 	 font-size: 0.7rem;
 	 font-weight: 900;
 }
  td {
-	 padding: 1rem 2rem;
+	 padding: 10px 20px !important;
 }
  .edit {
 	 border-radius: 0.2rem;
@@ -226,18 +227,20 @@ body {
 }
 
 .login-box {
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     color: white;
 	background: rgba(0,0,0,.8) !important;
 	padding: 40px !important;
-	width: auto !important;
+	max-width: 500px !important;
+	margin: 40px !important;
+	display: block !important;
 }
 
-.login-box h1 {
-	border-bottom: 6px solid #4ca1be !important;
+.login-box h1{
+  float: left;
+  font-size: 40px;
+  border-bottom: 6px solid #4ca1be !important;
+  margin-bottom: 50px;
+  padding: 13px 0;
 }
 
 .textbox {
