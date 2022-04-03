@@ -1,15 +1,20 @@
 package com.gcu.controller;
 import org.springframework.stereotype.Controller;
+
+
 import org.springframework.ui.Model;
 
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * The controller that handles all the routing for login
  */
 @Controller
 public class LoginController 
 {
+	// LoginController logger for future use, commented out
+	//Logger logger = LoggerFactory.getLogger(LoginController.class);
 	/**
 	 * the route to display the login screen with form
 	 * @param model (page model)
