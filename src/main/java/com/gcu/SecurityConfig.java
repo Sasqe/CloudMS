@@ -1,5 +1,14 @@
 package com.gcu;
 
+/**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 4 Logging / Monitoring
+ * April 3, 2022
+ * SecurityConfig.java
+ * 
+ * This class implements spring security to protect user data and pages. 
+ */
+
 import java.security.Security;
 
 import javax.servlet.ServletContext;

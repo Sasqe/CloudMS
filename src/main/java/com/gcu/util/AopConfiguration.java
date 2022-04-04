@@ -1,5 +1,14 @@
 package com.gcu.util;
 
+/**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 4 Logging / Monitoring
+ * April 3, 2022
+ * AopConfiguration.java
+ * 
+ * This file sets up execution points for the logging tools to trace the entrance and exit of all controllers, business and data services
+ */
+
 import org.aspectj.lang.annotation.Pointcut;
 
 import org.springframework.aop.Advisor;

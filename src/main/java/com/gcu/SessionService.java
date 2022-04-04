@@ -1,5 +1,14 @@
 package com.gcu;
 
+/**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 4 Logging / Monitoring
+ * April 3, 2022
+ * SessionService.java
+ * 
+ * This file creates sessions. 
+ */
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 

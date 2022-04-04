@@ -1,5 +1,14 @@
 package com.gcu.util;
 
+/**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 4 Logging / Monitoring
+ * April 3, 2022
+ * Tracer.java
+ * 
+ * Traces the application for logging purposes. 
+ */
+
 import java.util.Date;
 
 import org.aopalliance.intercept.MethodInvocation;
