@@ -5,8 +5,14 @@ import javax.validation.constraints.Size;
 
 //login/credentials model.
 /**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 5 Final
+ * April 10, 2022
+ * CredentialsModel.java
+ * 
  * The model for login credentials
  */
+
 public class CredentialsModel 
 {
 	@NotNull(message="Username is a required field")

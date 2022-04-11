@@ -1,6 +1,14 @@
 package com.gcu.business;
 
-import java.security.Security;
+/**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 5 Final
+ * April 10, 2022
+ * SecurityBusinessService.java
+ * 
+ * This class implements security for the application and finds users
+ */
+
 import java.util.ArrayList;
 
 import java.util.List;

@@ -19,10 +19,15 @@ import com.gcu.business.RegBusinessService;
 import com.gcu.business.UsersBusinessService;
 import com.gcu.model.UserModel;
 
-
 /**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 5 Final
+ * April 10, 2022
+ * RegisterController.java
+ * 
  * The Controller that handles all the routes to Register pages
  */
+
 @Controller
 @RequestMapping("/register")
 public class RegisterController 

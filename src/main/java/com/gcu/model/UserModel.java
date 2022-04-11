@@ -8,8 +8,14 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 5 Final
+ * April 10, 2022
+ * UserModel.java
+ * 
  * Model for User info
  */
+
 public class UserModel 
 {
 	//credentials used for logging in
@@ -55,10 +61,17 @@ public class UserModel
 		Wallet wallet = new Wallet();
 		this.wallet = wallet;
 	}
-	
+	/**
+	 * gets the wallet of the user
+	 * @return wallet
+	 */
 	public Wallet getWallet() {
 		return wallet;
 	}
+	/**
+	 * sets the wallet of the user
+	 * @param wallet
+	 */
 	public void setWallet(Wallet wallet) {
 		this.wallet = wallet;
 	}
@@ -74,9 +87,18 @@ public class UserModel
 	public void setId(int id) {
 		this.id = id;
 	}
+
+	/**
+	 * gets the friends list of the user
+	 * @return ArrayList<UserModel>
+	 */
 	public ArrayList<UserModel> getFriends() {
 		return friends;
 	}
+	/**
+	 * sets the friends list of the user
+	 * @param friends
+	 */
 	public void setFriends(ArrayList<UserModel> friends) {
 		this.friends = friends;
 	}

@@ -19,9 +19,14 @@ import com.gcu.business.BlockchainBusinessService;
 import com.gcu.business.UsersBusinessService;
 import com.gcu.model.Transaction;
 import com.gcu.model.UserModel;
+
 /**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 5 Final
+ * April 10, 2022
+ * TransactionController.java
+ * 
  * The Controller that handles all routing for product pages
- *
  */
 @Controller
 @RequestMapping("/blockchain")
@@ -60,8 +65,15 @@ public class TransactionController
 	    return "transactionView";
 	}
 	
-	// actually send the amount of money to the person
-	// add money to one persons account, remove money from another, only track transaction and commit these changes if both occurred
+	/**
+	 * sends amount of money to another user
+	 * add money to one persons account, remove money from another, only track transaction and commit these changes if both occurred
+	 * @param id
+	 * @param amount
+	 * @param model
+	 * @return individual profile page
+	 * @throws SQLException
+	 */
 	@PostMapping("/doTransaction")
 	public String transact(@RequestParam(name="id") String id, @RequestParam(value = "amount") String amount, Model model) throws SQLException 
 	{	

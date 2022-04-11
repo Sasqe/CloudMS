@@ -6,7 +6,7 @@ package com.gcu.business;
  * April 10, 2022
  * RegBusinessService.java
  * 
- * This class implements spring security to protect user data and pages. 
+ * This class handles all business logic needed for registration. 
  */
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +16,6 @@ import org.springframework.stereotype.Service;
 import com.gcu.data.UserDataService;
 import com.gcu.model.CredentialsModel;
 import com.gcu.model.UserModel;
-
-/**
- * The Register Business Service that handles all the 
- * Business logic needed for Registration
- */
 
 @Service
 public class RegBusinessService 

@@ -1,14 +1,19 @@
 package com.gcu.controller;
 import org.springframework.stereotype.Controller;
 
-
-
 import org.springframework.ui.Model;
 
 import org.springframework.web.bind.annotation.GetMapping;
+
 /**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 5 Final
+ * April 10, 2022
+ * LoginController.java
+ * 
  * The controller that handles all the routing for login
  */
+
 @Controller
 public class LoginController 
 {

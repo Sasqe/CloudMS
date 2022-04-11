@@ -4,6 +4,15 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 5 Final
+ * April 10, 2022
+ * IDataAccess.java
+ * 
+ * The user interface with all the methods implemented by the user services
+ */
+
+/**
  * The user interface with all the methods implemented by the user services
  * using generic models
  * @param <T> generic list users

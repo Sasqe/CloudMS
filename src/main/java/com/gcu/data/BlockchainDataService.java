@@ -1,10 +1,7 @@
 package com.gcu.data;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -16,9 +13,16 @@ import org.springframework.stereotype.Service;
 import com.gcu.business.UsersBusinessService;
 import com.gcu.model.Transaction;
 import com.gcu.model.UserModel;
+
 /**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 5 Final
+ * April 10, 2022
+ * BlockchainDataService.java
+ * 
  * All the Data layer logic for users
  */
+
 @Service
 public class BlockchainDataService 
 {
@@ -41,8 +45,14 @@ public class BlockchainDataService
 		this.jdbcTemplateObject = new JdbcTemplate(dataSource);
 	}
 
-	// send money from one user to another
-	// transaction for adding and removing money, then logging in transactions table
+	/**
+	 * send money from one user to another
+	 * transaction for adding and removing money, then logging in transactions table
+	 * @param user
+	 * @param friend
+	 * @param amount
+	 * @return boolean
+	 */
 	public boolean sendMoney(UserModel user, UserModel friend, float amount) {
 		float userNewBalance = user.getWallet().getAmount() - amount;
 		float friendNewBalance = friend.getWallet().getAmount() + amount;
@@ -92,6 +102,11 @@ public class BlockchainDataService
 		return false;
 	}
 	
+	/**
+	 * gets all previous transaction by user
+	 * @param user
+	 * @return ArrayList<Transaction>
+	 */
 	public ArrayList<Transaction> getTransactionsByUser(UserModel user) {
 		// query string same for add and remove money
 		String sql = "SELECT * FROM transactions WHERE userID = ? or friendID = ?";

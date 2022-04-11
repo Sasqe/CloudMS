@@ -15,9 +15,16 @@ import org.springframework.stereotype.Service;
 import com.gcu.model.CredentialsModel;
 import com.gcu.model.UserModel;
 import com.gcu.model.Wallet;
+
 /**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 5 Final
+ * April 10, 2022
+ * UserDataService.java
+ * 
  * All the Data layer logic for users
  */
+
 @Service
 public class UserDataService implements IDataAccess<UserModel> 
 {

@@ -1,5 +1,14 @@
 package com.gcu.business;
 
+/**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 5 Final
+ * April 10, 2022
+ * UsersBusinessService.java
+ * 
+ * This class implements business logic for user interactions
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,9 +20,6 @@ import com.gcu.data.UserDataService;
 import com.gcu.model.UserModel;
 import com.gcu.model.Wallet;
 
-/**
- * Business Logic for Users
- */
 public class UsersBusinessService {
 	//Autowire DataAccess interface as 'data'
 	@Autowired

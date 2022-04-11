@@ -20,9 +20,14 @@ import com.gcu.business.UsersBusinessService;
 import com.gcu.model.UserModel;
 
 /**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 5 Final
+ * April 10, 2022
+ * ProfileController.java
+ * 
  * simple welcome controller that returns a view name
- *
  */
+
 @Controller
 @RequestMapping("/profile")
 public class ProfileController 
@@ -58,8 +63,12 @@ public class ProfileController
 		return "profile";
 	}
 	
-	// another users profile
-	// displays another profile in a table CONFIRMED
+	/**
+	 * displays another users profile in a table
+	 * @param id
+	 * @param model
+	 * @return String other profiles page
+	 */
 	@GetMapping("/viewProfile")
 	public String viewProfile(@RequestParam(name="id") String id, Model model) 
 	{	
@@ -86,7 +95,12 @@ public class ProfileController
 		return "profile2";
 	}
 	
-	// removes a friend connection from the database and redirects to profile CONFIRMED
+	/**
+	 * removes a friend connection from the database and redirects to profile
+	 * @param id
+	 * @param model
+	 * @return individual profile page
+	 */
 	@PostMapping("/removeFriend")
 	public String removeFriend(@RequestParam(name="id") String id, Model model) 
 	{
@@ -110,7 +124,12 @@ public class ProfileController
 	    return "profile";
 	}
 	
-	// adds a friend connection to the database and redirects to profile page CONFIRMED
+	/**
+	 * adds a friend connection to the database and redirects to profile page
+	 * @param id
+	 * @param model
+	 * @return individual profile page
+	 */
 	@PostMapping("/addFriend")
 	public String addFriend(@RequestParam(name="id") String id, Model model) 
 	{
@@ -133,7 +152,12 @@ public class ProfileController
 	    return "profile";
 	}
 	
-	// displays a list of users in a table CONFIRMED
+	/**
+	 * displays a list of users in a table
+	 * @param id
+	 * @param model
+	 * @return user results page
+	 */
 	@PostMapping("/searchUsers")
 	public String searchUsers(@RequestParam(name="id") String id, Model model) 
 	{
@@ -165,7 +189,13 @@ public class ProfileController
 	    return "profiles";
 	}
 	
-	// updates a profile and redirects back to the profile with updated information CONFIRMED
+	/**
+	 * updates a profile and redirects back to the profile with updated information
+	 * @param userModel
+	 * @param bindingResult
+	 * @param model
+	 * @return individual profile page
+	 */
 	@PostMapping("/updateProfile")
 	public String updateProfile(@Valid UserModel userModel, BindingResult bindingResult, Model model) 
 	{
