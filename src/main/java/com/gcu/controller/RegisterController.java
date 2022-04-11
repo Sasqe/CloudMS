@@ -3,6 +3,7 @@ package com.gcu.controller;
 
 import java.security.Security;
 
+
 import javax.validation.Valid;
 
 
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.gcu.business.RegBusinessService;
 import com.gcu.business.UsersBusinessService;
-import com.gcu.data.UserDataService;
 import com.gcu.model.UserModel;
 
 
