@@ -1,17 +1,13 @@
 package com.gcu.business;
 
-import java.security.KeyPair;
-
 import java.util.ArrayList;
 import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import com.gcu.data.IDataAccess;
 import com.gcu.data.UserDataService;
-import com.gcu.model.CredentialsModel;
 import com.gcu.model.UserModel;
 import com.gcu.model.Wallet;
 

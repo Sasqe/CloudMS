@@ -16,6 +16,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 
 public class SessionService {
+	/**
+	 * This method gets and sets the session variables for a user. 
+	 * @param request
+	 * @return Authentication
+	 */
 	public Authentication getSession(HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		SecurityContext ctx = (SecurityContext) session.getAttribute("SPRING_SECURITY_CONTEXT");

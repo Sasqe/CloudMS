@@ -35,14 +35,23 @@ public class BlockchainBusinessService
 		System.out.println("Hello");
 	}
 	
-	// get all transactions by user
+	/**
+	 * This method gets all transactions by the user who is logged in
+	 * @param user
+	 * @return ArrayList<Transaction>
+	 */
 	public ArrayList<Transaction> getTransactionsByUser(UserModel user) {
 		ArrayList<Transaction> transactions = DAO.getTransactionsByUser(user);
 		return transactions;
 	}
 	
-	// send money from one user to another
-	// return false if not enough money
+	/**
+	 * allows a user to transfer money from one user to another, returns false if not possible
+	 * @param user
+	 * @param friend
+	 * @param amount
+	 * @return boolean
+	 */
 	public boolean sendMoney(UserModel user, UserModel friend, float amount) {
 		// if the user doesnt have enough money, dont even try and return false
 		if (user.getWallet().getAmount() < amount) {

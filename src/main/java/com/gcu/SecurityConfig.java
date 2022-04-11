@@ -11,8 +11,6 @@ package com.gcu;
 
 import java.security.Security;
 
-import javax.servlet.ServletContext;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -108,6 +106,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
       .userDetailsService(service)
       .passwordEncoder(passwordEncoder);
     }
+    /**
+     * establishes an HTTP event
+     * @return HttpSessionEventPublisher
+     */
     @Bean
     public HttpSessionEventPublisher httpSessionEventPublisher() {
         return new HttpSessionEventPublisher();

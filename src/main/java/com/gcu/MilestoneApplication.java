@@ -1,5 +1,14 @@
 package com.gcu;
 
+/**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 5 Final
+ * April 10, 2022
+ * MilestoneApplication.java
+ * 
+ * This class initializes the application and allows it to run
+ */
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

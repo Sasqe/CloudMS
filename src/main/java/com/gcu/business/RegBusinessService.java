@@ -1,5 +1,14 @@
 package com.gcu.business;
 
+/**
+ * Chris King and Kacey Morris
+ * CST 323 Milestone 5 Final
+ * April 10, 2022
+ * RegBusinessService.java
+ * 
+ * This class implements spring security to protect user data and pages. 
+ */
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
