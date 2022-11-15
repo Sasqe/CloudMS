@@ -1,0 +1,289 @@
+2022-04-22 09:06:17,773 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting MilestoneApplication using Java 16.0.2 on MSI with PID 10720 (C:\Users\conno\OneDrive\Documents\GitHub\CloudMS\target\classes started by conno in C:\Users\conno\OneDrive\Documents\GitHub\CloudMS)
+2022-04-22 09:06:17,771 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.0.Final
+2022-04-22 09:06:17,783 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.5.5, Spring v5.3.10
+2022-04-22 09:06:17,784 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-04-22 09:06:18,289 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-22 09:06:18,290 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-22 09:06:19,522 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2022-04-22 09:06:19,551 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 22 ms. Found 0 JDBC repository interfaces.
+2022-04-22 09:06:20,002 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'aopConfiguration' of type [com.gcu.util.AopConfiguration$$EnhancerBySpringCGLIB$$4f6b5b25] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-22 09:06:20,025 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'tracer' of type [com.gcu.util.Tracer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-22 09:06:20,026 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'performanceMonitorAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-04-22 09:06:20,837 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2022-04-22 09:06:20,850 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-22 09:06:20,851 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-04-22 09:06:20,851 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2022-04-22 09:06:21,048 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-04-22 09:06:21,049 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2758 ms
+2022-04-22 09:06:21,836 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38d207ec, org.springframework.security.web.context.SecurityContextPersistenceFilter@e180c6a, org.springframework.security.web.header.HeaderWriterFilter@1cddd0a1, org.springframework.security.web.authentication.logout.LogoutFilter@10e8e361, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@18ffbf1c, org.springframework.security.web.session.ConcurrentSessionFilter@60f060ed, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1d5f3453, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@68111779, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@509f5772, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4aabb18, org.springframework.security.web.session.SessionManagementFilter@2fe8e22, org.springframework.security.web.access.ExceptionTranslationFilter@1dc3001a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5043a35d]
+2022-04-22 09:06:22,214 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page template: index
+2022-04-22 09:06:22,763 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2022-04-22 09:06:23,985 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2022-04-22 09:06:24,293 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2022-04-22 09:06:24,335 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2022-04-22 09:06:24,366 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-22 09:06:24,383 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started MilestoneApplication in 7.526 seconds (JVM running for 9.438)
+2022-04-22 09:07:05,921 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-22 09:07:05,922 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-04-22 09:07:05,930 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 6 ms
+2022-04-22 09:07:06,097 TRACE com.gcu.util.Tracer [http-nio-8080-exec-1] GCU Method com.gcu.controller.HomeController.home execution started at:Fri Apr 22 09:07:06 MST 2022
+2022-04-22 09:07:06,117 TRACE com.gcu.util.Tracer [http-nio-8080-exec-1] GCU Method com.gcu.controller.HomeController.home execution lasted:20 ms
+2022-04-22 09:07:06,118 TRACE com.gcu.util.Tracer [http-nio-8080-exec-1] GCU Method com.gcu.controller.HomeController.home execution ended at:Fri Apr 22 09:07:06 MST 2022
+2022-04-22 09:07:06,120 WARN com.gcu.util.Tracer [http-nio-8080-exec-1] GCU Method execution longer than 10 ms!
+2022-04-22 09:07:07,572 WARN nz.net.ultraq.thymeleaf.expressions.ExpressionProcessor [http-nio-8080-exec-1] Fragment expression "layouts/preLoginTemplate" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2022-04-22 09:07:35,131 TRACE com.gcu.util.Tracer [http-nio-8080-exec-8] GCU Method com.gcu.controller.LoginController.display execution started at:Fri Apr 22 09:07:35 MST 2022
+2022-04-22 09:07:35,140 TRACE com.gcu.util.Tracer [http-nio-8080-exec-8] GCU Method com.gcu.controller.LoginController.display execution lasted:9 ms
+2022-04-22 09:07:35,141 TRACE com.gcu.util.Tracer [http-nio-8080-exec-8] GCU Method com.gcu.controller.LoginController.display execution ended at:Fri Apr 22 09:07:35 MST 2022
+2022-04-22 09:08:15,891 TRACE com.gcu.util.Tracer [http-nio-8080-exec-7] GCU Method com.gcu.business.SecurityBusinessService.loadUserByUsername execution started at:Fri Apr 22 09:08:15 MST 2022
+2022-04-22 09:08:15,912 TRACE com.gcu.util.Tracer [http-nio-8080-exec-7] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution started at:Fri Apr 22 09:08:15 MST 2022
+2022-04-22 09:08:15,930 TRACE com.gcu.util.Tracer [http-nio-8080-exec-7] GCU Method com.gcu.data.UserDataService.findByUsername execution started at:Fri Apr 22 09:08:15 MST 2022
+2022-04-22 09:08:16,409 TRACE com.gcu.util.Tracer [http-nio-8080-exec-7] GCU Method com.gcu.data.UserDataService.findByUsername execution lasted:479 ms
+2022-04-22 09:08:16,411 TRACE com.gcu.util.Tracer [http-nio-8080-exec-7] GCU Method com.gcu.data.UserDataService.findByUsername execution ended at:Fri Apr 22 09:08:16 MST 2022
+2022-04-22 09:08:16,412 WARN com.gcu.util.Tracer [http-nio-8080-exec-7] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:16,413 TRACE com.gcu.util.Tracer [http-nio-8080-exec-7] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution lasted:501 ms
+2022-04-22 09:08:16,415 TRACE com.gcu.util.Tracer [http-nio-8080-exec-7] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution ended at:Fri Apr 22 09:08:16 MST 2022
+2022-04-22 09:08:16,416 WARN com.gcu.util.Tracer [http-nio-8080-exec-7] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:16,423 TRACE com.gcu.util.Tracer [http-nio-8080-exec-7] GCU Method com.gcu.business.SecurityBusinessService.loadUserByUsername execution lasted:532 ms
+2022-04-22 09:08:16,425 TRACE com.gcu.util.Tracer [http-nio-8080-exec-7] GCU Method com.gcu.business.SecurityBusinessService.loadUserByUsername execution ended at:Fri Apr 22 09:08:16 MST 2022
+2022-04-22 09:08:16,426 WARN com.gcu.util.Tracer [http-nio-8080-exec-7] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:17,218 WARN org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-7] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [369] milliseconds.
+2022-04-22 09:08:17,251 TRACE com.gcu.util.Tracer [http-nio-8080-exec-8] GCU Method com.gcu.controller.HomeController.homePostLogin execution started at:Fri Apr 22 09:08:17 MST 2022
+2022-04-22 09:08:17,254 TRACE com.gcu.util.Tracer [http-nio-8080-exec-8] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution started at:Fri Apr 22 09:08:17 MST 2022
+2022-04-22 09:08:17,255 TRACE com.gcu.util.Tracer [http-nio-8080-exec-8] GCU Method com.gcu.data.UserDataService.findByUsername execution started at:Fri Apr 22 09:08:17 MST 2022
+2022-04-22 09:08:17,394 TRACE com.gcu.util.Tracer [http-nio-8080-exec-8] GCU Method com.gcu.data.UserDataService.findByUsername execution lasted:139 ms
+2022-04-22 09:08:17,395 TRACE com.gcu.util.Tracer [http-nio-8080-exec-8] GCU Method com.gcu.data.UserDataService.findByUsername execution ended at:Fri Apr 22 09:08:17 MST 2022
+2022-04-22 09:08:17,396 WARN com.gcu.util.Tracer [http-nio-8080-exec-8] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:17,397 TRACE com.gcu.util.Tracer [http-nio-8080-exec-8] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution lasted:143 ms
+2022-04-22 09:08:17,398 TRACE com.gcu.util.Tracer [http-nio-8080-exec-8] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution ended at:Fri Apr 22 09:08:17 MST 2022
+2022-04-22 09:08:17,399 WARN com.gcu.util.Tracer [http-nio-8080-exec-8] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:17,400 TRACE com.gcu.util.Tracer [http-nio-8080-exec-8] GCU Method com.gcu.controller.HomeController.homePostLogin execution lasted:149 ms
+2022-04-22 09:08:17,401 TRACE com.gcu.util.Tracer [http-nio-8080-exec-8] GCU Method com.gcu.controller.HomeController.homePostLogin execution ended at:Fri Apr 22 09:08:17 MST 2022
+2022-04-22 09:08:17,402 WARN com.gcu.util.Tracer [http-nio-8080-exec-8] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:17,425 WARN nz.net.ultraq.thymeleaf.expressions.ExpressionProcessor [http-nio-8080-exec-8] Fragment expression "layouts/postLoginTemplate" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2022-04-22 09:08:33,186 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.controller.TransactionController.transactionHistory execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,194 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,195 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findByUsername execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,348 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findByUsername execution lasted:153 ms
+2022-04-22 09:08:33,349 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findByUsername execution ended at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,349 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:33,350 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution lasted:157 ms
+2022-04-22 09:08:33,351 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution ended at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,351 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:33,352 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.BlockchainBusinessService.getTransactionsByUser execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,359 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.BlockchainDataService.getTransactionsByUser execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,483 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,484 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,554 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution lasted:70 ms
+2022-04-22 09:08:33,555 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,556 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:33,557 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:74 ms
+2022-04-22 09:08:33,557 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,558 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:33,558 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,559 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,627 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution lasted:68 ms
+2022-04-22 09:08:33,627 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,628 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:33,628 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:70 ms
+2022-04-22 09:08:33,628 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,628 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:33,629 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,630 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,700 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution lasted:70 ms
+2022-04-22 09:08:33,701 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,702 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:33,703 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:74 ms
+2022-04-22 09:08:33,703 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,704 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:33,706 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,707 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,793 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution lasted:86 ms
+2022-04-22 09:08:33,794 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,794 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:33,794 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:88 ms
+2022-04-22 09:08:33,795 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,795 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:33,795 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,796 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,863 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution lasted:67 ms
+2022-04-22 09:08:33,863 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,864 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:33,864 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:69 ms
+2022-04-22 09:08:33,865 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,865 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:33,866 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,866 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,934 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution lasted:68 ms
+2022-04-22 09:08:33,934 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,935 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:33,935 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:69 ms
+2022-04-22 09:08:33,935 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,936 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:33,936 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:33,937 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:33 MST 2022
+2022-04-22 09:08:34,005 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution lasted:68 ms
+2022-04-22 09:08:34,006 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:34 MST 2022
+2022-04-22 09:08:34,006 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:34,007 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:71 ms
+2022-04-22 09:08:34,007 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:34 MST 2022
+2022-04-22 09:08:34,007 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:34,008 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:34 MST 2022
+2022-04-22 09:08:34,008 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:34 MST 2022
+2022-04-22 09:08:34,076 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution lasted:68 ms
+2022-04-22 09:08:34,077 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:34 MST 2022
+2022-04-22 09:08:34,077 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:34,077 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:69 ms
+2022-04-22 09:08:34,078 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:34 MST 2022
+2022-04-22 09:08:34,078 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:34,078 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.BlockchainDataService.getTransactionsByUser execution lasted:719 ms
+2022-04-22 09:08:34,079 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.data.BlockchainDataService.getTransactionsByUser execution ended at:Fri Apr 22 09:08:34 MST 2022
+2022-04-22 09:08:34,079 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:34,079 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.BlockchainBusinessService.getTransactionsByUser execution lasted:727 ms
+2022-04-22 09:08:34,079 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.business.BlockchainBusinessService.getTransactionsByUser execution ended at:Fri Apr 22 09:08:34 MST 2022
+2022-04-22 09:08:34,080 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:34,080 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.controller.TransactionController.transactionHistory execution lasted:894 ms
+2022-04-22 09:08:34,080 TRACE com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method com.gcu.controller.TransactionController.transactionHistory execution ended at:Fri Apr 22 09:08:34 MST 2022
+2022-04-22 09:08:34,080 WARN com.gcu.util.Tracer [http-nio-8080-exec-2] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:39,254 TRACE com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method com.gcu.controller.ProfileController.viewProfile execution started at:Fri Apr 22 09:08:39 MST 2022
+2022-04-22 09:08:39,265 TRACE com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution started at:Fri Apr 22 09:08:39 MST 2022
+2022-04-22 09:08:39,266 TRACE com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method com.gcu.data.UserDataService.findByUsername execution started at:Fri Apr 22 09:08:39 MST 2022
+2022-04-22 09:08:39,461 TRACE com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method com.gcu.data.UserDataService.findByUsername execution lasted:195 ms
+2022-04-22 09:08:39,462 TRACE com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method com.gcu.data.UserDataService.findByUsername execution ended at:Fri Apr 22 09:08:39 MST 2022
+2022-04-22 09:08:39,462 WARN com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:39,463 TRACE com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution lasted:198 ms
+2022-04-22 09:08:39,463 TRACE com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution ended at:Fri Apr 22 09:08:39 MST 2022
+2022-04-22 09:08:39,464 WARN com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:39,464 TRACE com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution started at:Fri Apr 22 09:08:39 MST 2022
+2022-04-22 09:08:39,464 TRACE com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method com.gcu.data.UserDataService.findByUsername execution started at:Fri Apr 22 09:08:39 MST 2022
+2022-04-22 09:08:39,531 TRACE com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method com.gcu.data.UserDataService.findByUsername execution lasted:67 ms
+2022-04-22 09:08:39,532 TRACE com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method com.gcu.data.UserDataService.findByUsername execution ended at:Fri Apr 22 09:08:39 MST 2022
+2022-04-22 09:08:39,532 WARN com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:39,532 TRACE com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution lasted:68 ms
+2022-04-22 09:08:39,533 TRACE com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution ended at:Fri Apr 22 09:08:39 MST 2022
+2022-04-22 09:08:39,533 WARN com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:39,534 TRACE com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method com.gcu.controller.ProfileController.viewProfile execution lasted:280 ms
+2022-04-22 09:08:39,534 TRACE com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method com.gcu.controller.ProfileController.viewProfile execution ended at:Fri Apr 22 09:08:39 MST 2022
+2022-04-22 09:08:39,534 WARN com.gcu.util.Tracer [http-nio-8080-exec-9] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:42,310 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.controller.ProfileController.removeFriend execution started at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,312 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution started at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,312 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.data.UserDataService.findByUsername execution started at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,479 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.data.UserDataService.findByUsername execution lasted:167 ms
+2022-04-22 09:08:42,479 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.data.UserDataService.findByUsername execution ended at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,480 WARN com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:42,480 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution lasted:168 ms
+2022-04-22 09:08:42,481 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution ended at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,481 WARN com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:42,482 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution started at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,482 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.data.UserDataService.findByUsername execution started at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,551 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.data.UserDataService.findByUsername execution lasted:69 ms
+2022-04-22 09:08:42,551 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.data.UserDataService.findByUsername execution ended at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,552 WARN com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:42,552 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution lasted:71 ms
+2022-04-22 09:08:42,552 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution ended at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,553 WARN com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:42,554 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.business.UsersBusinessService.removeFriend execution started at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,555 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.data.UserDataService.removeFriend execution started at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,715 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.data.UserDataService.removeFriend execution lasted:160 ms
+2022-04-22 09:08:42,715 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.data.UserDataService.removeFriend execution ended at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,716 WARN com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:42,716 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.business.UsersBusinessService.removeFriend execution lasted:162 ms
+2022-04-22 09:08:42,716 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.business.UsersBusinessService.removeFriend execution ended at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,716 WARN com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:42,717 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution started at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,717 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.data.UserDataService.findByUsername execution started at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,820 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.data.UserDataService.findByUsername execution lasted:103 ms
+2022-04-22 09:08:42,821 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.data.UserDataService.findByUsername execution ended at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,822 WARN com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:42,823 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution lasted:106 ms
+2022-04-22 09:08:42,823 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution ended at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,824 WARN com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:42,824 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.controller.ProfileController.removeFriend execution lasted:514 ms
+2022-04-22 09:08:42,825 TRACE com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method com.gcu.controller.ProfileController.removeFriend execution ended at:Fri Apr 22 09:08:42 MST 2022
+2022-04-22 09:08:42,826 WARN com.gcu.util.Tracer [http-nio-8080-exec-5] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:45,667 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.controller.TransactionController.transactionHistory execution started at:Fri Apr 22 09:08:45 MST 2022
+2022-04-22 09:08:45,668 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution started at:Fri Apr 22 09:08:45 MST 2022
+2022-04-22 09:08:45,668 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findByUsername execution started at:Fri Apr 22 09:08:45 MST 2022
+2022-04-22 09:08:45,832 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findByUsername execution lasted:164 ms
+2022-04-22 09:08:45,833 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findByUsername execution ended at:Fri Apr 22 09:08:45 MST 2022
+2022-04-22 09:08:45,833 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:45,834 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution lasted:166 ms
+2022-04-22 09:08:45,835 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findByUsername execution ended at:Fri Apr 22 09:08:45 MST 2022
+2022-04-22 09:08:45,836 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:45,836 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.BlockchainBusinessService.getTransactionsByUser execution started at:Fri Apr 22 09:08:45 MST 2022
+2022-04-22 09:08:45,837 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.BlockchainDataService.getTransactionsByUser execution started at:Fri Apr 22 09:08:45 MST 2022
+2022-04-22 09:08:45,904 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:45 MST 2022
+2022-04-22 09:08:45,905 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:45 MST 2022
+2022-04-22 09:08:45,974 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution lasted:69 ms
+2022-04-22 09:08:45,975 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:45 MST 2022
+2022-04-22 09:08:45,977 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:45,978 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:74 ms
+2022-04-22 09:08:45,979 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:45 MST 2022
+2022-04-22 09:08:45,979 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:45,980 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:45 MST 2022
+2022-04-22 09:08:45,981 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:45 MST 2022
+2022-04-22 09:08:46,050 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution lasted:69 ms
+2022-04-22 09:08:46,051 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,052 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,053 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:72 ms
+2022-04-22 09:08:46,053 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,054 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,054 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,055 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,136 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution lasted:81 ms
+2022-04-22 09:08:46,137 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,138 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,139 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:85 ms
+2022-04-22 09:08:46,140 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,141 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,141 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,142 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,223 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution lasted:81 ms
+2022-04-22 09:08:46,225 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,226 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,227 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:86 ms
+2022-04-22 09:08:46,229 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,229 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,230 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,231 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,301 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution lasted:71 ms
+2022-04-22 09:08:46,302 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,302 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,303 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:73 ms
+2022-04-22 09:08:46,304 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,304 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,305 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,306 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,376 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution lasted:70 ms
+2022-04-22 09:08:46,376 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,377 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,378 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:73 ms
+2022-04-22 09:08:46,379 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,380 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,381 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,382 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,457 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution lasted:75 ms
+2022-04-22 09:08:46,457 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,458 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,458 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:77 ms
+2022-04-22 09:08:46,459 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,460 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,460 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution started at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,461 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution started at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,539 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution lasted:78 ms
+2022-04-22 09:08:46,540 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.UserDataService.findById execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,541 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,542 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution lasted:82 ms
+2022-04-22 09:08:46,543 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.UsersBusinessService.findById execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,543 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,544 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.BlockchainDataService.getTransactionsByUser execution lasted:707 ms
+2022-04-22 09:08:46,544 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.data.BlockchainDataService.getTransactionsByUser execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,545 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,545 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.BlockchainBusinessService.getTransactionsByUser execution lasted:709 ms
+2022-04-22 09:08:46,546 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.business.BlockchainBusinessService.getTransactionsByUser execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,546 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:08:46,547 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.controller.TransactionController.transactionHistory execution lasted:880 ms
+2022-04-22 09:08:46,547 TRACE com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method com.gcu.controller.TransactionController.transactionHistory execution ended at:Fri Apr 22 09:08:46 MST 2022
+2022-04-22 09:08:46,548 WARN com.gcu.util.Tracer [http-nio-8080-exec-10] GCU Method execution longer than 10 ms!
+2022-04-22 09:10:07,226 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(6)-127.0.0.1] Application shutdown requested.
+2022-04-22 09:10:07,286 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(6)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2022-04-22 09:10:08,704 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(6)-127.0.0.1] HikariPool-1 - Shutdown completed.
